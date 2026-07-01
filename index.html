@@ -239,6 +239,55 @@ tbody td{padding:10px 13px;font-size:.82rem;vertical-align:middle}
 .emoji-grid button{background:none;border:none;font-size:1.15rem;cursor:pointer;padding:3px;border-radius:6px;transition:background .15s}
 .emoji-grid button:hover{background:rgba(255,255,255,.1)}
 
+/* ===== TEACHER BROADCAST ===== */
+.teacher-broadcast-wrap{max-width:700px;margin:0 auto}
+
+/* ===== FIREWALL ===== */
+.fw-section{background:rgba(239,68,68,.04);border:1px solid rgba(239,68,68,.15);border-radius:12px;padding:14px;margin-bottom:12px}
+.fw-section-title{font-size:.82rem;font-weight:800;color:var(--danger);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.fw-rule-item{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.fw-rule-item:last-child{border-bottom:none}
+.fw-rule-info{flex:1;padding-left:12px}
+.fw-rule-name{font-size:.82rem;font-weight:700}
+.fw-rule-desc{font-size:.71rem;color:var(--muted);margin-top:2px}
+
+/* ===== SUB-ADMIN PERMISSIONS ===== */
+.perm-check-item{display:flex;align-items:center;gap:7px;font-size:.77rem;cursor:pointer;background:rgba(255,255,255,.03);padding:7px 10px;border-radius:8px;border:1px solid var(--border);transition:border-color .2s}
+.perm-check-item:hover{border-color:var(--accent)}
+.perm-check-item input{accent-color:var(--accent)}
+
+/* ===== FIREWALL GATE MODAL ===== */
+.fw-gate{position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,.8);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center}
+.fw-gate-box{background:var(--bg2);border:2px solid rgba(239,68,68,.4);border-radius:20px;padding:32px;width:340px;text-align:center;animation:popIn .3s ease}
+.fw-gate-icon{font-size:3rem;margin-bottom:12px}
+.fw-gate-title{font-size:1.1rem;font-weight:900;color:var(--danger);margin-bottom:6px}
+.fw-gate-sub{font-size:.8rem;color:var(--muted);margin-bottom:20px}
+.fw-pin-input{display:flex;gap:6px;justify-content:center;margin-bottom:16px}
+.fw-pin-input input{width:44px;height:52px;text-align:center;font-size:1.4rem;font-weight:900;border-radius:10px;border:2px solid var(--border);background:rgba(255,255,255,.05);color:var(--text);font-family:monospace;transition:border-color .2s}
+.fw-pin-input input:focus{border-color:var(--danger);outline:none}
+
+/* ===== HIDE ONLINE STATUS FOR STUDENTS/TEACHERS ===== */
+.hide-status .chat-status{display:none!important}
+.hide-status .chat-hinfo .hs .online-dot{display:none!important}
+
+/* ===== CHAT ENHANCEMENTS ===== */
+.chat-bg-pattern{background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.015'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.chat-messages{background:var(--bg)!important}
+
+/* ===== CHAT STATUS HIDDEN (for students viewing admin) ===== */
+body.role-student .chat-status,
+body.role-teacher .chat-status{display:none!important}
+
+/* ===== CHAT MODERN ENHANCEMENTS ===== */
+.chat-date-sep{text-align:center;margin:10px 0;font-size:.68rem;color:var(--muted2);display:flex;align-items:center;gap:8px}
+.chat-date-sep::before,.chat-date-sep::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* ===== BROADCAST HISTORY TEACHER ===== */
+.t-bc-item{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:8px}
+.t-bc-item .bc-msg{font-size:.84rem;margin:6px 0}
+.t-bc-item .bc-meta{font-size:.7rem;color:var(--muted);display:flex;gap:8px;align-items:center}
+.t-bc-img{max-width:200px;border-radius:8px;margin-top:8px;cursor:pointer}
+
 /* ===== CHAT 2.0 (instagram/telegram-style) ===== */
 .chat-wrap{position:relative}
 .chat-header{padding:10px 14px;gap:9px;cursor:pointer}
@@ -598,6 +647,45 @@ body.chat-light .reply-quote{background:rgba(0,0,0,.05)}
 #admin-tab-users,#admin-tab-students-reg,#admin-tab-devices,#admin-tab-projects,#admin-tab-messages,#admin-tab-activity,#admin-tab-support,#admin-tab-broadcast,#admin-tab-admins,#admin-tab-maintenance{display:none}
 #admin-tab-users{display:block}
 
+/* SETTINGS PAGE */
+#set-tab-security,#set-tab-privacy,#set-tab-projects,#set-tab-developer{display:none}
+#set-tab-security{display:block}
+.settings-section-title{font-size:.8rem;font-weight:800;color:var(--accent);margin:20px 0 8px;display:flex;align-items:center;gap:6px}
+.settings-section-title:first-of-type{margin-top:0}
+.settings-note{font-size:.74rem;color:var(--accent3);background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);border-radius:8px;padding:9px 12px;margin-bottom:14px;line-height:1.7}
+.settings-note.info{color:var(--info);background:rgba(56,189,248,.08);border-color:rgba(56,189,248,.2)}
+.settings-note.danger{color:var(--danger);background:rgba(239,68,68,.08);border-color:rgba(239,68,68,.2)}
+.set-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid var(--border)}
+.set-row:last-child{border-bottom:none}
+.set-info{flex:1;min-width:0}
+.set-label{font-size:.84rem;font-weight:700;color:var(--text)}
+.set-desc{font-size:.72rem;color:var(--muted);margin-top:2px;line-height:1.6}
+.set-ctrl{flex-shrink:0;display:flex;align-items:center;gap:6px}
+.set-ctrl input[type=number]{width:80px;text-align:center}
+.set-ctrl select{width:auto;min-width:140px}
+.set-ctrl input[type=number],.set-ctrl select{padding:7px 10px;font-size:.8rem}
+.tgl{position:relative;display:inline-block;width:42px;height:24px;flex-shrink:0}
+.tgl input{opacity:0;width:0;height:0;position:absolute}
+.tgl-sl{position:absolute;cursor:pointer;inset:0;background:rgba(255,255,255,.12);border:1px solid var(--border2);transition:.25s;border-radius:99px}
+.tgl-sl:before{position:absolute;content:"";height:18px;width:18px;right:2px;top:2px;background:#fff;transition:.25s;border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,.4)}
+.tgl input:checked+.tgl-sl{background:var(--accent)}
+.tgl input:checked+.tgl-sl:before{transform:translateX(-18px)}
+.tgl input:disabled+.tgl-sl{opacity:.45;cursor:not-allowed}
+.set-action-btn{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 14px;border:1px solid var(--border);border-radius:11px;margin-bottom:9px;background:rgba(255,255,255,.02)}
+.set-action-btn .sai{font-size:.83rem;font-weight:700}
+.set-action-btn .sad{font-size:.72rem;color:var(--muted);margin-top:2px}
+.dev-zone{border:1px solid rgba(239,68,68,.25);border-radius:12px;padding:14px;margin-top:6px;background:rgba(239,68,68,.04)}
+.dev-zone-title{color:var(--danger);font-weight:800;font-size:.82rem;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+#debug-badge{position:fixed;bottom:10px;left:10px;background:var(--danger);color:#fff;font-size:.65rem;font-weight:900;padding:4px 9px;border-radius:7px;z-index:9999;letter-spacing:1px;box-shadow:0 4px 14px rgba(0,0,0,.4)}
+#screenshot-shield{position:fixed;inset:0;background:var(--bg);z-index:999998;display:none;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--muted);text-align:center;padding:20px}
+#screenshot-shield .ssi{font-size:2.2rem}
+.watermark-layer{position:fixed;inset:0;pointer-events:none;z-index:99997;overflow:hidden;opacity:.05;display:none}
+.watermark-layer.on{display:block}
+.watermark-layer span{position:absolute;white-space:nowrap;font-size:13px;font-weight:700;color:#fff;transform:rotate(-32deg)}
+body.screenshot-protected,body.screenshot-protected *{-webkit-user-select:none!important;user-select:none!important}
+body.screenshot-protected input,body.screenshot-protected textarea{-webkit-user-select:text!important;user-select:text!important}
+body.screenshot-protected img{-webkit-user-drag:none;pointer-events:none}
+
 /* SPLIT CHAT GRID (admin-chat / teacher-chat list + conversation) */
 .split-chat-grid{display:grid;grid-template-columns:260px 1fr;gap:12px;height:calc(100vh - 140px);height:calc(100dvh - 140px)}
 @media(max-width:768px){
@@ -641,7 +729,7 @@ body.chat-light .reply-quote{background:rgba(0,0,0,.05)}
       </div>
       <button class="btn-auth primary" onclick="doLogin()">🚀 دخول</button>
       <div class="auth-err" id="l-err"></div>
-      <button class="shortcode-btn" onclick="showShortcodeLogin()">🔑 دخول برمز مختصر</button>
+      <!-- shortcode login removed from main UI -->
     </div>
 
     <!-- SHORTCODE LOGIN -->
@@ -685,6 +773,15 @@ body.chat-light .reply-quote{background:rgba(0,0,0,.05)}
     </div>
   </div>
 </div>
+
+<!-- SCREEN PROTECTION SHIELD (blurs content when window loses focus, if enabled) -->
+<div id="screenshot-shield"><span class="ssi">🔒</span><b>المحتوى محجوب لأسباب أمنية</b><span style="font-size:.78rem">عاد التركيز إلى النافذة لإظهار المحتوى</span></div>
+
+<!-- WATERMARK LAYER (traceability deterrent, if enabled) -->
+<div class="watermark-layer" id="watermark-layer"></div>
+
+<!-- DEBUG MODE BADGE -->
+<div id="debug-badge" style="display:none">🐞 DEBUG MODE</div>
 
 <!-- TOAST -->
 <div id="toast"><span id="toast-icon">✅</span><span id="toast-msg"></span></div>
@@ -754,18 +851,26 @@ body.chat-light .reply-quote{background:rgba(0,0,0,.05)}
           <div class="stat-c" style="--vc:var(--accent)"><div class="sic" style="background:rgba(99,102,241,.12)">📁</div><div class="sv" id="st-proj-count">0</div><div class="sl">مشاريعي</div></div>
           <div class="stat-c" style="--vc:var(--accent2)"><div class="sic" style="background:rgba(16,185,129,.12)">💬</div><div class="sv" id="st-msg-count">0</div><div class="sl">رسائلي</div></div>
           <div class="stat-c" style="--vc:var(--accent3)"><div class="sic" style="background:rgba(245,158,11,.12)">📅</div><div class="sv" id="st-event-count">0</div><div class="sl">المواعيد</div></div>
-          <div class="stat-c" style="--vc:var(--info)"><div class="sic" style="background:rgba(56,189,248,.12)">🏆</div><div class="sv" id="st-rank">—</div><div class="sl">ترتيبي</div></div>
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px" class="home-grid">
           <div class="card"><div class="card-header"><span class="card-title">📢 مشاريع مقترحة</span><button class="btn btn-sm btn-ghost" onclick="nav('v-student-project')">الكل</button></div><div id="home-suggestions"></div></div>
           <div class="card"><div class="card-header"><span class="card-title">📅 المواعيد القادمة</span></div><div id="home-events"></div></div>
-          <div class="card" style="grid-column:span 2"><div class="card-header"><span class="card-title">🏆 لوحة الشرف</span><button class="btn btn-sm btn-ghost" onclick="nav('v-leaderboard')">الكل</button></div><div id="home-leaderboard"></div></div>
         </div>
       </div>
 
       <!-- ======= STUDENT CHAT ======= -->
       <div class="view" id="v-student-chat">
-        <div class="chat-wrap" id="st-chat-wrap"></div>
+        <div style="max-width:700px;margin:0 auto">
+          <div class="card" style="margin-bottom:14px">
+            <div class="card-header">
+              <span class="card-title">📢 رسائل الأستاذ والإدارة</span>
+            </div>
+            <div class="settings-note" style="margin-bottom:10px">
+              📌 هنا تظهر الرسائل والمرفقات الجماعية التي أرسلها الأستاذ أو الإدارة لجميع التلاميذ.
+            </div>
+            <div id="student-broadcast-feed"></div>
+          </div>
+        </div>
       </div>
 
       <!-- ======= GROUP CHAT ======= -->
@@ -813,7 +918,7 @@ body.chat-light .reply-quote{background:rgba(0,0,0,.05)}
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px" class="home-grid">
           <div class="card"><div class="card-header"><span class="card-title">📁 آخر المشاريع</span><button class="btn btn-sm btn-ghost" onclick="nav('v-teacher-projects')">الكل</button></div><div id="t-recent-projects"></div></div>
-          <div class="card"><div class="card-header"><span class="card-title">💬 محادثات التلاميذ</span></div><div id="t-convos-home"></div></div>
+          <div class="card"><div class="card-header"><span class="card-title">📢 آخر الرسائل المُرسلة</span><button class="btn btn-sm btn-primary" onclick="nav('v-teacher-chat')">إرسال جديد</button></div><div id="t-convos-home"></div></div>
         </div>
       </div>
 
@@ -857,15 +962,32 @@ body.chat-light .reply-quote{background:rgba(0,0,0,.05)}
         </div>
       </div>
 
-      <!-- ======= TEACHER CHAT ======= -->
+      <!-- ======= TEACHER CHAT (Broadcast only) ======= -->
       <div class="view" id="v-teacher-chat">
-        <div class="split-chat-grid show-list" id="teacher-chat-grid">
-          <div class="card" style="padding:0;overflow:hidden;height:100%">
-            <div style="padding:12px 14px;border-bottom:1px solid var(--border);font-weight:800;font-size:.88rem">💬 التلاميذ</div>
-            <div id="teacher-student-list" style="overflow-y:auto;height:calc(100% - 46px)"></div>
+        <div class="teacher-broadcast-wrap">
+          <div class="card" style="max-width:640px;margin:0 auto">
+            <div class="card-header">
+              <span class="card-title">📢 إرسال رسالة جماعية للتلاميذ</span>
+              <span class="badge badge-blue" id="t-student-count-bc">0 تلميذ</span>
+            </div>
+            <div class="settings-note" style="margin-bottom:14px">
+              📌 كأستاذ، يمكنك إرسال رسائل ومرفقات لجميع التلاميذ دفعة واحدة. لا يمكنك قراءة المحادثات الخاصة بين التلاميذ.
+            </div>
+            <div class="fg">
+              <label>الرسالة (اختياري إن أرفقت صورة)</label>
+              <textarea id="t-bc-msg" rows="4" placeholder="اكتب رسالتك للتلاميذ..."></textarea>
+            </div>
+            <div class="fg">
+              <label>صورة أو ملف مرفق (اختياري)</label>
+              <input type="file" id="t-bc-file" accept="image/*,.pdf,.doc,.docx,.ppt,.pptx">
+            </div>
+            <button class="btn btn-primary" style="width:100%;padding:12px" onclick="teacherBroadcast()">
+              📨 إرسال لجميع التلاميذ
+            </button>
           </div>
-          <div id="teacher-chat-main">
-            <div class="empty-state" style="height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center"><span class="empty-icon">💬</span><p>اختر تلميذاً للبدء</p></div>
+          <div class="card" style="max-width:640px;margin:14px auto 0">
+            <div class="card-header"><span class="card-title">📋 سجل الرسائل المُرسلة</span></div>
+            <div id="teacher-broadcast-history"></div>
           </div>
         </div>
       </div>
@@ -874,11 +996,6 @@ body.chat-light .reply-quote{background:rgba(0,0,0,.05)}
       <div class="view" id="v-teacher-group-chat">
         <div class="group-banner">💬 <b>الدردشة الجماعية</b> — قناة التواصل المشترك</div>
         <div class="chat-wrap" id="teacher-group-wrap"></div>
-      </div>
-
-      <!-- ======= LEADERBOARD ======= -->
-      <div class="view" id="v-leaderboard">
-        <div class="card"><div class="card-header"><span class="card-title">🏆 لوحة الشرف</span></div><div id="leaderboard-list"></div></div>
       </div>
 
       <!-- ======= ADMIN HOME ======= -->
@@ -901,6 +1018,7 @@ body.chat-light .reply-quote{background:rgba(0,0,0,.05)}
           <div class="admin-tab" onclick="adminTab('broadcast')">📢 إرسال جماعي</div>
           <div class="admin-tab" onclick="adminTab('admins')">🛡️ المشرفون</div>
           <div class="admin-tab" onclick="adminTab('maintenance')">🔧 الصيانة</div>
+          <div class="admin-tab" onclick="openFirewallGate()">🔥 جدار الحماية</div>
         </div>
 
         <!-- USERS TAB -->
@@ -932,6 +1050,174 @@ body.chat-light .reply-quote{background:rgba(0,0,0,.05)}
                 </div>
               </div>
               <div id="admin-user-list"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FIREWALL TAB (hidden, unlocked by PIN) -->
+        <div id="admin-tab-firewall" style="display:none">
+          <div class="card" style="border:2px solid rgba(239,68,68,.3)">
+            <div class="card-header">
+              <span class="card-title" style="color:var(--danger)">🔥 جدار الحماية — حماية المنصة</span>
+              <span class="badge badge-red" id="fw-status-badge">جاري التحقق...</span>
+            </div>
+            <div class="settings-note" style="border-color:rgba(239,68,68,.3);color:var(--danger)">
+              ⚠️ هذه الإعدادات حساسة وتؤثر مباشرة على حماية المنصة ضد الهجمات الإلكترونية. تأكد من فهم كل خيار قبل تفعيله.
+            </div>
+
+            <!-- DDoS Protection -->
+            <div class="fw-section">
+              <div class="fw-section-title">🛡️ الحماية من هجمات DDoS</div>
+              <div class="fw-rule-item">
+                <div class="fw-rule-info">
+                  <div class="fw-rule-name">تحديد معدل الطلبات (Rate Limiting)</div>
+                  <div class="fw-rule-desc">يمنع إرسال أكثر من عدد محدد من الطلبات في الثانية الواحدة من نفس المصدر</div>
+                </div>
+                <label class="tgl"><input type="checkbox" id="fw-rate-limit" checked onchange="saveFwSettings()"><span class="tgl-sl"></span></label>
+              </div>
+              <div class="fw-rule-item">
+                <div class="fw-rule-info">
+                  <div class="fw-rule-name">حماية SYN Flood</div>
+                  <div class="fw-rule-desc">يكتشف ويحجب فيضانات طلبات SYN التي تستنزف موارد الخادم</div>
+                </div>
+                <label class="tgl"><input type="checkbox" id="fw-syn-flood" checked onchange="saveFwSettings()"><span class="tgl-sl"></span></label>
+              </div>
+              <div class="fw-rule-item">
+                <div class="fw-rule-info">
+                  <div class="fw-rule-name">الحماية من HTTP Flood</div>
+                  <div class="fw-rule-desc">يكتشف الطلبات HTTP المتكررة بشكل مشبوه ويوقفها</div>
+                </div>
+                <label class="tgl"><input type="checkbox" id="fw-http-flood" checked onchange="saveFwSettings()"><span class="tgl-sl"></span></label>
+              </div>
+              <div class="fw-rule-item">
+                <div class="fw-rule-info">
+                  <div class="fw-rule-name">CAPTCHA تلقائي عند الاشتباه</div>
+                  <div class="fw-rule-desc">يطلب تحقق إضافي من المستخدمين المشتبه بهم تلقائياً</div>
+                </div>
+                <label class="tgl"><input type="checkbox" id="fw-captcha" onchange="saveFwSettings()"><span class="tgl-sl"></span></label>
+              </div>
+            </div>
+
+            <!-- Brute Force Protection -->
+            <div class="fw-section">
+              <div class="fw-section-title">🔐 الحماية من هجمات القوة الغاشمة (Brute Force)</div>
+              <div class="fw-rule-item">
+                <div class="fw-rule-info">
+                  <div class="fw-rule-name">قفل الحساب بعد محاولات متكررة</div>
+                  <div class="fw-rule-desc">يقفل الحساب مؤقتاً بعد تجاوز عدد محاولات الدخول الفاشلة</div>
+                </div>
+                <label class="tgl"><input type="checkbox" id="fw-brute-lock" checked onchange="saveFwSettings()"><span class="tgl-sl"></span></label>
+              </div>
+              <div class="fw-rule-item">
+                <div class="fw-rule-info">
+                  <div class="fw-rule-name">تأخير بين محاولات الدخول</div>
+                  <div class="fw-rule-desc">يضيف تأخيراً تدريجياً بين محاولات الدخول الفاشلة (Exponential Backoff)</div>
+                </div>
+                <label class="tgl"><input type="checkbox" id="fw-backoff" checked onchange="saveFwSettings()"><span class="tgl-sl"></span></label>
+              </div>
+              <div class="fw-rule-item">
+                <div class="fw-rule-info">
+                  <div class="fw-rule-name">حظر IP تلقائي عند الكشف عن هجوم</div>
+                  <div class="fw-rule-desc">يحجب عنوان IP المهاجم تلقائياً عند اكتشاف نشاط مشبوه</div>
+                </div>
+                <label class="tgl"><input type="checkbox" id="fw-auto-ip-ban" checked onchange="saveFwSettings()"><span class="tgl-sl"></span></label>
+              </div>
+            </div>
+
+            <!-- SQL / XSS Protection -->
+            <div class="fw-section">
+              <div class="fw-section-title">💉 الحماية من حقن الكود (Injection)</div>
+              <div class="fw-rule-item">
+                <div class="fw-rule-info">
+                  <div class="fw-rule-name">فلتر حقن SQL</div>
+                  <div class="fw-rule-desc">يكتشف ويمنع محاولات حقن SQL في الحقول والنماذج</div>
+                </div>
+                <label class="tgl"><input type="checkbox" id="fw-sql-inject" checked onchange="saveFwSettings()"><span class="tgl-sl"></span></label>
+              </div>
+              <div class="fw-rule-item">
+                <div class="fw-rule-info">
+                  <div class="fw-rule-name">فلتر XSS (Cross-Site Scripting)</div>
+                  <div class="fw-rule-desc">يمنع إدراج سكريبت خبيث عبر المدخلات</div>
+                </div>
+                <label class="tgl"><input type="checkbox" id="fw-xss" checked onchange="saveFwSettings()"><span class="tgl-sl"></span></label>
+              </div>
+              <div class="fw-rule-item">
+                <div class="fw-rule-info">
+                  <div class="fw-rule-name">الحماية من CSRF</div>
+                  <div class="fw-rule-desc">يتحقق من هوية الطلبات لمنع تزوير الطلبات عبر المواقع</div>
+                </div>
+                <label class="tgl"><input type="checkbox" id="fw-csrf" checked onchange="saveFwSettings()"><span class="tgl-sl"></span></label>
+              </div>
+            </div>
+
+            <!-- Content Security -->
+            <div class="fw-section">
+              <div class="fw-section-title">📦 أمان المحتوى والملفات</div>
+              <div class="fw-rule-item">
+                <div class="fw-rule-info">
+                  <div class="fw-rule-name">فحص الملفات المرفوعة</div>
+                  <div class="fw-rule-desc">يفحص الملفات المرفوعة بحثاً عن محتوى خبيث قبل قبولها</div>
+                </div>
+                <label class="tgl"><input type="checkbox" id="fw-file-scan" checked onchange="saveFwSettings()"><span class="tgl-sl"></span></label>
+              </div>
+              <div class="fw-rule-item">
+                <div class="fw-rule-info">
+                  <div class="fw-rule-name">تقييد أنواع الملفات الخطرة</div>
+                  <div class="fw-rule-desc">يمنع رفع الملفات التنفيذية (.exe, .sh, .php, .js...)</div>
+                </div>
+                <label class="tgl"><input type="checkbox" id="fw-file-types" checked onchange="saveFwSettings()"><span class="tgl-sl"></span></label>
+              </div>
+              <div class="fw-rule-item">
+                <div class="fw-rule-info">
+                  <div class="fw-rule-name">تشفير الاتصالات (HTTPS Enforced)</div>
+                  <div class="fw-rule-desc">يجبر جميع الاتصالات على استخدام HTTPS</div>
+                </div>
+                <label class="tgl"><input type="checkbox" id="fw-https" checked onchange="saveFwSettings()"><span class="tgl-sl"></span></label>
+              </div>
+            </div>
+
+            <!-- Monitoring -->
+            <div class="fw-section">
+              <div class="fw-section-title">📡 المراقبة والتسجيل</div>
+              <div class="fw-rule-item">
+                <div class="fw-rule-info">
+                  <div class="fw-rule-name">تسجيل أحداث الأمان</div>
+                  <div class="fw-rule-desc">يسجل جميع الأحداث الأمنية والهجمات المكتشفة في السجل</div>
+                </div>
+                <label class="tgl"><input type="checkbox" id="fw-sec-log" checked onchange="saveFwSettings()"><span class="tgl-sl"></span></label>
+              </div>
+              <div class="fw-rule-item">
+                <div class="fw-rule-info">
+                  <div class="fw-rule-name">تنبيه فوري عند الكشف عن هجوم</div>
+                  <div class="fw-rule-desc">يرسل إشعاراً داخلياً للمدير فور اكتشاف أي هجوم</div>
+                </div>
+                <label class="tgl"><input type="checkbox" id="fw-alert" checked onchange="saveFwSettings()"><span class="tgl-sl"></span></label>
+              </div>
+              <div class="fw-rule-item">
+                <div class="fw-rule-info">
+                  <div class="fw-rule-name">وضع الطوارئ — قفل المنصة عند هجوم حرج</div>
+                  <div class="fw-rule-desc">يقفل المنصة تلقائياً ويفعّل وضع الصيانة عند اكتشاف هجوم شديد</div>
+                </div>
+                <label class="tgl"><input type="checkbox" id="fw-emergency" onchange="saveFwSettings()"><span class="tgl-sl"></span></label>
+              </div>
+            </div>
+
+            <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap">
+              <button class="btn btn-success" onclick="fwEnableAll()">✅ تفعيل الكل</button>
+              <button class="btn btn-ghost" onclick="fwDisableAll()">❌ إيقاف الكل</button>
+              <button class="btn btn-warning btn-sm" onclick="changeFwPin()">🔑 تغيير PIN</button>
+              <button class="btn btn-danger btn-sm" onclick="lockFirewall()">🔒 قفل</button>
+            </div>
+          </div>
+
+          <!-- Firewall Attack Log -->
+          <div class="card" style="margin-top:14px">
+            <div class="card-header">
+              <span class="card-title">📋 سجل الهجمات المُكتشفة</span>
+              <button class="btn btn-sm btn-ghost" onclick="clearFwLog()">مسح السجل</button>
+            </div>
+            <div id="fw-attack-log">
+              <div class="empty-state" style="padding:16px"><p>لم يتم تسجيل أي هجوم حتى الآن ✅</p></div>
             </div>
           </div>
         </div>
@@ -1008,6 +1294,7 @@ body.chat-light .reply-quote{background:rgba(0,0,0,.05)}
             </div>
             <div class="fg"><label>عنوان الرسالة *</label><input id="bc-title" placeholder="موضوع الرسالة"></div>
             <div class="fg"><label>نص الرسالة *</label><textarea id="bc-msg" rows="5" placeholder="اكتب رسالتك هنا..."></textarea></div>
+            <div class="fg"><label>صورة أو ملف مرفق (اختياري)</label><input type="file" id="bc-file" accept="image/*,.pdf,.doc,.docx,.ppt,.pptx"></div>
             <button class="btn btn-primary" onclick="sendBroadcast()">📢 إرسال الآن</button>
             <div class="card" style="margin-top:16px">
               <div class="card-header"><span class="card-title">📋 الرسائل الجماعية المرسلة</span></div>
@@ -1020,23 +1307,37 @@ body.chat-light .reply-quote{background:rgba(0,0,0,.05)}
         <div id="admin-tab-admins">
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px" class="home-grid">
             <div class="card">
-              <div class="card-header"><span class="card-title">🛡️ إضافة مشرف مساعد</span></div>
+              <div class="card-header"><span class="card-title">🛡️ إنشاء حساب مساعد / مشرف</span></div>
+              <p style="font-size:.79rem;color:var(--muted);margin-bottom:12px">يمكنك إنشاء حساب مساعد مع تحديد صلاحياته بالتفصيل وإخفاء اسمه الحقيقي.</p>
               <div class="fg"><label>المستخدم المراد ترقيته</label>
                 <select id="new-admin-user"><option value="">اختر مستخدماً</option></select>
               </div>
-              <div class="fg"><label>صلاحياته</label>
-                <div style="display:flex;flex-direction:column;gap:6px;margin-top:4px" id="admin-perms">
-                  <label style="display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" id="perm-users" value="users"> إدارة المستخدمين</label>
-                  <label style="display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" id="perm-broadcast" value="broadcast"> الإرسال الجماعي</label>
-                  <label style="display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" id="perm-projects" value="projects"> مشاهدة المشاريع</label>
-                  <label style="display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" id="perm-support" value="support"> الرد على الدعم</label>
-                  <label style="display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" id="perm-maintenance" value="maintenance"> إدارة الصيانة</label>
-                </div>
+              <div class="fg">
+                <label>اسم العرض للمساعد (اختياري — لإخفاء الاسم الحقيقي)</label>
+                <input id="sub-admin-display-name" placeholder="مثال: مشرف المنصة، القسم أ...">
+                <div style="font-size:.7rem;color:var(--muted2);margin-top:3px">💡 اتركه فارغاً لاستخدام الاسم الحقيقي</div>
               </div>
-              <button class="btn btn-primary" style="width:100%;margin-top:8px" onclick="addSubAdmin()">🛡️ تعيين مشرفاً</button>
+              <div style="font-size:.78rem;font-weight:700;color:var(--muted);margin:10px 0 6px">🔐 الصلاحيات التفصيلية</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-bottom:12px">
+                <label class="perm-check-item"><input type="checkbox" id="perm-users" value="users"> 👥 إدارة المستخدمين</label>
+                <label class="perm-check-item"><input type="checkbox" id="perm-view-proj" value="view-proj" checked> 📁 عرض المشاريع</label>
+                <label class="perm-check-item"><input type="checkbox" id="perm-grade" value="grade"> ⭐ تقييم المشاريع</label>
+                <label class="perm-check-item"><input type="checkbox" id="perm-broadcast" value="broadcast"> 📢 الإرسال الجماعي</label>
+                <label class="perm-check-item"><input type="checkbox" id="perm-support" value="support" checked> 🆘 الرد على الدعم</label>
+                <label class="perm-check-item"><input type="checkbox" id="perm-maintenance" value="maintenance"> 🔧 الصيانة</label>
+                <label class="perm-check-item"><input type="checkbox" id="perm-activity" value="activity" checked> 📣 سجل النشاط</label>
+                <label class="perm-check-item"><input type="checkbox" id="perm-settings-sub" value="settings"> ⚙️ الإعدادات</label>
+                <label class="perm-check-item"><input type="checkbox" id="perm-chat-admin" value="chat"> 💬 الدردشة الإدارية</label>
+                <label class="perm-check-item"><input type="checkbox" id="perm-sid" value="sid"> 🆔 سجل التلاميذ</label>
+              </div>
+              <div style="display:flex;gap:6px;margin-bottom:10px">
+                <button class="btn btn-ghost btn-sm" onclick="selectAllSubPerms(true)">✅ الكل</button>
+                <button class="btn btn-ghost btn-sm" onclick="selectAllSubPerms(false)">❌ لا شيء</button>
+              </div>
+              <button class="btn btn-primary" style="width:100%" onclick="addSubAdmin()">🛡️ تعيين كمشرف</button>
             </div>
             <div class="card">
-              <div class="card-header"><span class="card-title">👥 قائمة المشرفين</span></div>
+              <div class="card-header"><span class="card-title">👥 قائمة المشرفين والمساعدين</span></div>
               <div id="admins-list"></div>
             </div>
           </div>
@@ -1072,6 +1373,128 @@ body.chat-light .reply-quote{background:rgba(0,0,0,.05)}
           </div>
           <div id="admin-chat-main">
             <div class="empty-state" style="height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center"><span class="empty-icon">💬</span><p>اختر مستخدماً</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ======= ADMIN SETTINGS ======= -->
+      <div class="view" id="v-admin-settings">
+        <div class="admin-tabs" id="settings-tabs">
+          <div class="admin-tab on" onclick="adminSettingsTab('security')">🔐 الأمان والمصادقة</div>
+          <div class="admin-tab" onclick="adminSettingsTab('privacy')">🔒 حماية الشاشة</div>
+          <div class="admin-tab" onclick="adminSettingsTab('projects')">📁 المشاريع</div>
+          <div class="admin-tab" onclick="adminSettingsTab('developer')">🤖 المطور</div>
+        </div>
+
+        <!-- SECURITY TAB -->
+        <div id="set-tab-security">
+          <div class="card">
+            <div class="card-header"><span class="card-title">🔐 إعدادات الأمان والمصادقة</span><button class="btn btn-sm btn-primary" onclick="saveSecuritySettings()">💾 حفظ</button></div>
+            <div class="settings-note">⚠️ بعض الخيارات (حظر/سماح IP، التحقق عبر البريد أو SMS) تتطلب خادماً (Backend) فعلياً وتُحفظ هنا كقيم تهيئة فقط.</div>
+            <div id="set-list-security"></div>
+          </div>
+          <div class="card">
+            <div class="card-header"><span class="card-title">⚡ إجراءات أمان فورية</span></div>
+            <div class="set-action-btn">
+              <div><div class="sai">🚪 تسجيل خروج إجباري لجميع المستخدمين</div><div class="sad">يُخرج كل المستخدمين المتصلين الآن (باستثناء جلستك)</div></div>
+              <button class="btn btn-sm btn-danger" onclick="forceLogoutAllUsers()">تنفيذ</button>
+            </div>
+            <div class="set-action-btn">
+              <div><div class="sai">🚨 وضع الطوارئ — قفل المنصة بالكامل</div><div class="sad">يوقف دخول جميع المستخدمين فوراً (يستخدم نظام الصيانة)</div></div>
+              <button class="btn btn-sm btn-danger" onclick="emergencyLockPlatform()">تفعيل</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRIVACY / SCREENSHOT TAB -->
+        <div id="set-tab-privacy">
+          <div class="card">
+            <div class="card-header"><span class="card-title">🔒 حماية الشاشة ومنع لقطة الشاشة</span><button class="btn btn-sm btn-primary" onclick="savePrivacySettings()">💾 حفظ</button></div>
+            <div class="settings-note">⚠️ لا يستطيع أي تطبيق ويب منع لقطة الشاشة بشكل كامل على مستوى نظام التشغيل، لكن هذه الإعدادات توفر رادعاً فعالاً: طمس المحتوى، علامة مائية تُعرّف الناسخ، وتسجيل المحاولات المكتشفة.</div>
+            <div class="set-row"><div class="set-info"><div class="set-label">تفعيل حماية الشاشة (منع لقطة الشاشة)</div><div class="set-desc">يفعّل كل خيارات الحماية أدناه فور الحفظ</div></div><div class="set-ctrl"><label class="tgl"><input type="checkbox" id="cfg-screenshotProtection"><span class="tgl-sl"></span></label></div></div>
+            <div class="set-row"><div class="set-info"><div class="set-label">طمس المحتوى عند مغادرة النافذة</div><div class="set-desc">يحجب الشاشة عند تبديل التطبيقات أو فقدان التركيز</div></div><div class="set-ctrl"><label class="tgl"><input type="checkbox" id="cfg-blurOnBlur"><span class="tgl-sl"></span></label></div></div>
+            <div class="set-row"><div class="set-info"><div class="set-label">وضع علامة مائية باسم المستخدم</div><div class="set-desc">تُسهّل تتبع مصدر أي لقطة شاشة منشورة</div></div><div class="set-ctrl"><label class="tgl"><input type="checkbox" id="cfg-watermarkEnabled"><span class="tgl-sl"></span></label></div></div>
+            <div class="set-row"><div class="set-info"><div class="set-label">تعطيل النسخ والقائمة اليمنى</div><div class="set-desc">يمنع تحديد النص، النسخ، والقائمة اليمنى للفأرة</div></div><div class="set-ctrl"><label class="tgl"><input type="checkbox" id="cfg-disableCopyRightClick"><span class="tgl-sl"></span></label></div></div>
+            <div class="set-row"><div class="set-info"><div class="set-label">تسجيل محاولات لقطة الشاشة المكتشفة</div><div class="set-desc">يضيف محاولة Print Screen إلى سجل النشاط</div></div><div class="set-ctrl"><label class="tgl"><input type="checkbox" id="cfg-logScreenshotAttempts"><span class="tgl-sl"></span></label></div></div>
+          </div>
+        </div>
+
+        <!-- PROJECTS TAB -->
+        <div id="set-tab-projects">
+          <div class="card">
+            <div class="card-header"><span class="card-title">📁 إعدادات المشاريع</span><button class="btn btn-sm btn-primary" onclick="saveProjectSettings()">💾 حفظ</button></div>
+            <div id="set-list-projects"></div>
+          </div>
+        </div>
+
+        <!-- DEVELOPER TAB -->
+        <div id="set-tab-developer">
+          <div class="card">
+            <div class="card-header"><span class="card-title">🧩 الوحدات البرمجية والتصحيح</span><button class="btn btn-sm btn-primary" onclick="saveDevSettings()">💾 حفظ</button></div>
+            <div class="settings-note info">إيقاف وحدة يخفي عناصرها من قائمة التنقل لدى التلاميذ والأساتذة فوراً بعد الحفظ.</div>
+            <div class="settings-section-title">🧩 الوحدات</div>
+            <div class="set-row"><div class="set-info"><div class="set-label">المراسلة الفردية</div></div><div class="set-ctrl"><label class="tgl"><input type="checkbox" id="cfg-modChat"><span class="tgl-sl"></span></label></div></div>
+            <div class="set-row"><div class="set-info"><div class="set-label">الدردشة الجماعية</div></div><div class="set-ctrl"><label class="tgl"><input type="checkbox" id="cfg-modGroupChat"><span class="tgl-sl"></span></label></div></div>
+            <div class="set-row"><div class="set-info"><div class="set-label">المشاريع</div></div><div class="set-ctrl"><label class="tgl"><input type="checkbox" id="cfg-modProjects"><span class="tgl-sl"></span></label></div></div>
+            <div class="set-row"><div class="set-info"><div class="set-label">الدعم والمساعدة</div></div><div class="set-ctrl"><label class="tgl"><input type="checkbox" id="cfg-modSupport"><span class="tgl-sl"></span></label></div></div>
+            <div class="set-row"><div class="set-info"><div class="set-label">التقويم</div></div><div class="set-ctrl"><label class="tgl"><input type="checkbox" id="cfg-modCalendar"><span class="tgl-sl"></span></label></div></div>
+            <div class="settings-section-title">🐞 وضع التصحيح</div>
+            <div class="set-row"><div class="set-info"><div class="set-label">تفعيل وضع التصحيح (Debug Mode)</div><div class="set-desc">يضيف شارة 🐞 ثابتة على الشاشة لتمييز بيئة التطوير</div></div><div class="set-ctrl"><label class="tgl"><input type="checkbox" id="cfg-debugMode"><span class="tgl-sl"></span></label></div></div>
+          </div>
+
+          <div class="card">
+            <div class="card-header"><span class="card-title">🔑 مفاتيح API وأكواد الدخول والصلاحيات</span></div>
+            <div class="set-row"><div class="set-info"><div class="set-label">مفتاح API الحالي</div><div class="set-desc">للاستخدام المستقبلي مع خادم خارجي</div></div><div class="set-ctrl" style="gap:8px">
+              <input type="text" id="api-key-display" readonly style="width:200px;font-family:monospace" value="لم يتم إنشاء مفتاح بعد">
+              <button class="btn btn-sm btn-ghost" onclick="copyApiKey()">📋</button>
+              <button class="btn btn-sm btn-primary" onclick="generateApiKey()">توليد جديد</button>
+            </div></div>
+            <div class="set-action-btn"><div><div class="sai">🔐 إدارة صلاحيات المشرفين والمساعدين</div><div class="sad">إضافة/تعديل صلاحيات المشرفين من تبويب المشرفون</div></div><button class="btn btn-sm btn-ghost" onclick="gotoAdminTab('admins')">فتح ↗</button></div>
+            <div class="set-action-btn"><div><div class="sai">🆔 أكواد الدخول الخاصة للأساتذة والتلاميذ</div><div class="sad">يمكن توليد رمز دخول مختصر لكل مستخدم من تبويب المستخدمون</div></div><button class="btn btn-sm btn-ghost" onclick="gotoAdminTab('users')">فتح ↗</button></div>
+          </div>
+
+          <div class="card">
+            <div class="card-header"><span class="card-title">💾 قاعدة البيانات والنسخ الاحتياطي</span></div>
+            <div class="set-action-btn"><div><div class="sai">⬇️ تصدير قاعدة البيانات</div><div class="sad">يحفظ كل بيانات المنصة في ملف JSON قابل للتنزيل</div></div><button class="btn btn-sm btn-ghost" onclick="exportDatabase()">تصدير</button></div>
+            <div class="set-action-btn"><div><div class="sai">⬆️ استيراد قاعدة البيانات</div><div class="sad">استبدال البيانات الحالية بملف JSON مُصدَّر مسبقاً</div></div><label class="btn btn-sm btn-ghost" style="cursor:pointer">استيراد<input type="file" accept=".json" style="display:none" onchange="importDatabaseFile(this)"></label></div>
+            <div class="set-action-btn"><div><div class="sai">📸 إنشاء نسخة احتياطية فورية</div><div class="sad">يحفظ لقطة حالية من البيانات (آخر 10 نسخ)</div></div><button class="btn btn-sm btn-success" onclick="createInstantBackup()">إنشاء</button></div>
+            <div class="set-row"><div class="set-info"><div class="set-label">جدولة النسخ الاحتياطي التلقائي</div><div class="set-desc">يعمل فقط أثناء فتح المنصة في المتصفح</div></div><div class="set-ctrl"><select id="cfg-autoBackupFreq" onchange="saveDevSettings()"><option value="off">متوقف</option><option value="daily">يومي</option><option value="weekly">أسبوعي</option></select></div></div>
+            <div id="backups-list" style="margin-top:8px"></div>
+          </div>
+
+          <div class="card">
+            <div class="card-header"><span class="card-title">🧹 صيانة وأداء النظام</span></div>
+            <div class="set-action-btn"><div><div class="sai">🧹 مسح الكاش</div></div><button class="btn btn-sm btn-ghost" onclick="clearAppCache()">مسح</button></div>
+            <div class="set-action-btn"><div><div class="sai">🔍 فحص سلامة قاعدة البيانات</div></div><button class="btn btn-sm btn-ghost" onclick="checkDatabaseIntegrity()">فحص</button></div>
+            <div class="set-action-btn"><div><div class="sai">🔧 إصلاح الجداول التالفة</div></div><button class="btn btn-sm btn-ghost" onclick="repairCorruptedTables()">إصلاح</button></div>
+            <div class="set-action-btn"><div><div class="sai">🔄 إعادة تشغيل النظام</div><div class="sad">يعيد تحميل الصفحة الحالية</div></div><button class="btn btn-sm btn-ghost" onclick="restartSystemSim()">إعادة تشغيل</button></div>
+            <div class="lb-item"><div style="font-size:1.1rem">💾</div><div style="flex:1">استهلاك التخزين</div><span class="badge badge-gray" id="dev-storage-stat">—</span></div>
+            <div class="lb-item"><div style="font-size:1.1rem">🧠</div><div style="flex:1">استهلاك الذاكرة (المتصفح)</div><span class="badge badge-gray" id="dev-memory-stat">—</span></div>
+            <div class="lb-item"><div style="font-size:1.1rem">🟢</div><div style="flex:1">المستخدمون المتصلون الآن</div><span class="badge badge-green" id="dev-online-stat">—</span></div>
+          </div>
+
+          <div class="dev-zone">
+            <div class="dev-zone-title">🗑️ منطقة الحذف الجماعي — إجراءات لا يمكن التراجع عنها</div>
+            <div class="set-action-btn"><div><div class="sai">حذف جميع الإشعارات</div></div><button class="btn btn-sm btn-danger" onclick="delAllNotifications()">حذف</button></div>
+            <div class="set-action-btn"><div><div class="sai">حذف جميع الرسائل</div></div><button class="btn btn-sm btn-danger" onclick="delAllMessages()">حذف</button></div>
+            <div class="set-action-btn"><div><div class="sai">حذف جميع المشاريع</div></div><button class="btn btn-sm btn-danger" onclick="delAllProjects()">حذف</button></div>
+            <div class="set-action-btn"><div><div class="sai">حذف جميع الحسابات المحظورة (المعلّقة)</div></div><button class="btn btn-sm btn-danger" onclick="delAllBlockedAccounts()">حذف</button></div>
+            <div class="set-action-btn" style="margin-bottom:0"><div><div class="sai">إعادة ضبط الإعدادات الافتراضية</div><div class="sad">يخص هذه الصفحة فقط</div></div><button class="btn btn-sm btn-danger" onclick="resetSettingsToDefault()">إعادة ضبط</button></div>
+          </div>
+
+          <div class="card">
+            <div class="card-header"><span class="card-title">📜 سجل الأخطاء (Error Logs)</span><button class="btn btn-sm btn-ghost" onclick="clearErrorLog()">مسح</button></div>
+            <div id="error-log-list"></div>
+          </div>
+          <div class="card">
+            <div class="card-header"><span class="card-title">📣 سجل النشاط الكامل لكل عملية إدارية</span></div>
+            <div class="set-action-btn" style="margin-bottom:0"><div><div class="sai">سجل النشاط الشامل (تسجيل دخول، إرسال مشاريع، إجراءات الإدارة...)</div><div class="sad">متوفر بالتفصيل في تبويب «النشاط» داخل لوحة الإدارة</div></div><button class="btn btn-sm btn-ghost" onclick="gotoAdminTab('activity')">فتح ↗</button></div>
+          </div>
+          <div class="card">
+            <div class="card-header"><span class="card-title">🛰️ ملاحظات أوامر المطور</span></div>
+            <div class="settings-note">📝 هذه الملاحظات تُسجَّل للتوثيق الداخلي فقط — لا يوجد خادم حقيقي لتنفيذها كأوامر فعلية.</div>
+            <div class="fg" style="display:flex;gap:8px"><input id="devnote-input" placeholder="اكتب ملاحظة أو أمراً للتوثيق..." style="flex:1"><button class="btn btn-sm btn-primary" onclick="addDevNote()">تسجيل</button></div>
+            <div id="devnotes-list" style="margin-top:8px"></div>
           </div>
         </div>
       </div>
@@ -1267,6 +1690,38 @@ function SMaint(v){localStorage.setItem('sch_maintenance',JSON.stringify(v))}
 function GSC(){return JSON.parse(localStorage.getItem('sch_shortcodes')||'{}')}
 function SSC(v){localStorage.setItem('sch_shortcodes',JSON.stringify(v))}
 
+// ============================================================
+// PLATFORM SETTINGS (admin settings page)
+// ============================================================
+function defaultSettings(){return {
+  // --- security ---
+  twoFA:false,minPassLen:6,passComplexity:false,passExpiryDays:0,preventPassReuse:false,
+  lockAttempts:5,lockDurationMin:15,logLoginAttempts:true,alertNewDevice:false,manageTrustedDevices:false,
+  ipBlockList:'',ipAllowList:'',logUserActivity:true,monitorSessions:true,preventDuplicateAccounts:true,
+  verifyEmail:false,verifyPhone:false,restrictedDownloadUsers:'',
+  // --- privacy / screen protection ---
+  screenshotProtection:false,blurOnBlur:true,watermarkEnabled:true,disableCopyRightClick:true,logScreenshotAttempts:true,
+  // --- projects ---
+  projEnabled:true,allowIndividualProjects:true,allowGroupProjects:true,maxTeamMembers:4,maxProjectSizeMB:25,
+  maxProjectFiles:5,allowedFileTypes:'pdf,doc,docx,zip,ppt,pptx,jpg,png',requireProjectDesc:false,requireProjectTitle:true,
+  allowEditAfterSubmit:false,submissionDeadline:'',autoCloseAfterDeadline:false,allowReupload:true,reuploadLimit:3,
+  enableProjectEvaluation:true,showGradesToStudents:true,allowProjectComments:false,autoArchiveOldProjects:false,
+  notifyTeacherOnUpload:true,notifyStudentOnGrade:true,
+  // --- developer ---
+  debugMode:false,apiKey:'',autoBackupFreq:'off',
+  modChat:true,modGroupChat:true,modProjects:true,modSupport:true,modCalendar:true,
+}}
+function GSettings(){return Object.assign(defaultSettings(),JSON.parse(localStorage.getItem('sch_settings')||'{}'))}
+function SSettings(v){localStorage.setItem('sch_settings',JSON.stringify(v))}
+function GBackups(){return JSON.parse(localStorage.getItem('sch_backups')||'[]')}
+function SBackups(v){localStorage.setItem('sch_backups',JSON.stringify(v))}
+function GErrLog(){return JSON.parse(localStorage.getItem('sch_errorlog')||'[]')}
+function SErrLog(v){localStorage.setItem('sch_errorlog',JSON.stringify(v))}
+function GDevNotes(){return JSON.parse(localStorage.getItem('sch_devnotes')||'[]')}
+function SDevNotes(v){localStorage.setItem('sch_devnotes',JSON.stringify(v))}
+function GLoginFails(){return JSON.parse(localStorage.getItem('sch_loginfails')||'{}')}
+function SLoginFails(v){localStorage.setItem('sch_loginfails',JSON.stringify(v))}
+
 function pushActivity(a){const arr=GAct();arr.unshift({...a,time:now()});if(arr.length>500)arr.pop();SAct(arr)}
 function pushNotif(n){const arr=GN();arr.unshift({...n,read:false,time:now()});if(arr.length>200)arr.pop();SN(arr);renderNotifBadge()}
 
@@ -1290,6 +1745,11 @@ function initData(){
   if(!localStorage.getItem('sch_logins'))SLogins([]);
   if(!localStorage.getItem('sch_shortcodes'))SSC({});
   if(!localStorage.getItem('sch_maintenance'))SMaint({on:false,msg:'',openTime:''});
+  if(!localStorage.getItem('sch_settings'))SSettings(defaultSettings());
+  if(!localStorage.getItem('sch_backups'))SBackups([]);
+  if(!localStorage.getItem('sch_errorlog'))SErrLog([]);
+  if(!localStorage.getItem('sch_devnotes'))SDevNotes([]);
+  if(!localStorage.getItem('sch_loginfails'))SLoginFails({});
   // Apply saved theme
   const t=localStorage.getItem('sch_theme');
   if(t){const p=JSON.parse(t);document.documentElement.style.setProperty('--accent',p.a);document.documentElement.style.setProperty('--purple',p.p)}
@@ -1297,6 +1757,16 @@ function initData(){
   if(bg){document.documentElement.style.setProperty('--bg',bg.bg);document.documentElement.style.setProperty('--bg2',bg.bg2)}
 }
 initData();
+
+// Capture runtime errors into the developer error log (best-effort, never breaks the app)
+window.addEventListener('error',e=>{
+  try{
+    const log=GErrLog();
+    log.unshift({msg:e.message||'خطأ غير معروف',src:(e.filename||'')+(e.lineno?(':'+e.lineno):''),time:now()});
+    if(log.length>200)log.length=200;SErrLog(log);
+  }catch(_){}
+});
+if(GSettings().debugMode)setTimeout(()=>{const b=$('debug-badge');if(b)b.style.display='block'},0);
 
 // ============================================================
 // MAINTENANCE CHECK
@@ -1416,15 +1886,36 @@ function showShortcodeLogin(){
   document.querySelectorAll('.auth-tab').forEach(el=>el.classList.remove('on'));
 }
 
+// Account lockout helpers (uses the "lockAttempts" / "lockDurationMin" settings)
+function isLockedOut(username){
+  const f=GLoginFails()[username];if(!f||!f.until)return 0;
+  const remain=f.until-Date.now();return remain>0?remain:0;
+}
+function recordFailedLogin(username){
+  const s=GSettings();if(!s.lockAttempts)return; // 0 = disabled
+  const fails=GLoginFails();const f=fails[username]||{count:0,until:0};
+  f.count++;
+  if(f.count>=s.lockAttempts){f.until=Date.now()+s.lockDurationMin*60000;f.count=0;}
+  fails[username]=f;SLoginFails(fails);
+}
+function clearFailedLogin(username){const fails=GLoginFails();if(fails[username]){delete fails[username];SLoginFails(fails)}}
+
 function doLogin(){
   if(checkMaintenance())return;
   const u=$('l-user').value.trim(),p=$('l-pass').value.trim();
   if(!u||!p){$('l-err').textContent='أدخل اسم المستخدم وكلمة المرور';return}
+  const lockMs=isLockedOut(u);
+  if(lockMs>0){$('l-err').textContent=`🔒 الحساب مقفل مؤقتاً، حاول بعد ${Math.ceil(lockMs/60000)} دقيقة`;return}
   const found=GU().find(x=>x.username===u&&x.pass===p);
-  if(!found){$('l-err').textContent='❌ اسم المستخدم أو كلمة المرور غير صحيحة';$('l-pass').value='';return}
+  if(!found){
+    recordFailedLogin(u);
+    if(GSettings().logLoginAttempts)pushActivity({user:u,name:u,role:'-',action:'محاولة دخول فاشلة'});
+    $('l-err').textContent='❌ اسم المستخدم أو كلمة المرور غير صحيحة';$('l-pass').value='';return;
+  }
   if(found.blocked){$('l-err').textContent='❌ هذا الحساب محظور. تواصل مع الإدارة';return}
+  clearFailedLogin(u);
   $('l-err').textContent='';CU=found;
-  pushActivity({user:CU.username,name:CU.name,role:CU.role,action:'تسجيل دخول'});
+  if(GSettings().logLoginAttempts)pushActivity({user:CU.username,name:CU.name,role:CU.role,action:'تسجيل دخول'});
   recordLogin(CU,'كلمة مرور');
   afterLogin();
 }
@@ -1467,6 +1958,14 @@ function recordLogin(user,method){
 
 
 
+// Shared password-policy check (driven by Security settings: min length + complexity)
+function checkPasswordPolicy(pass){
+  const s=GSettings();
+  if(pass.length<Math.max(4,s.minPassLen))return `كلمة المرور يجب أن تكون ${Math.max(4,s.minPassLen)} أحرف على الأقل`;
+  if(s.passComplexity&&!(/\d/.test(pass)&&/[^A-Za-z0-9]/.test(pass)))return 'كلمة المرور يجب أن تحتوي على رقم ورمز واحد على الأقل';
+  return null;
+}
+
 function doRegister(){
   const role=$('r-role').value;
   const name=$('r-name').value.trim();
@@ -1478,7 +1977,7 @@ function doRegister(){
   if(!role){err('اختر نوع الحساب (تلميذ / أستاذ)');return}
   if(!name||!user||!email){err('أكمل جميع الحقول المطلوبة');return}
   if(!email.includes('@')){err('البريد الإلكتروني غير صالح');return}
-  if(pass.length<4){err('كلمة المرور يجب أن تكون 4 أحرف على الأقل');return}
+  const ppErr=checkPasswordPolicy(pass);if(ppErr){err(ppErr);return}
   if(pass!==pass2){err('كلمتا المرور غير متطابقتان');return}
   if(GU().find(x=>x.username===user)){err('اسم المستخدم محجوز، اختر آخر');return}
   const newUser={username:user,name,email,pass,role,blocked:false,created:now()};
@@ -1503,9 +2002,26 @@ function toggleRegFields(){
   $('teacher-reg-fields').style.display=r==='teacher'?'block':'none';
 }
 
+let _sessionStartedAt=0,_forceLogoutInterval=null;
+function checkForceLogout(){
+  if(!CU)return;
+  const at=+localStorage.getItem('sch_force_logout_at')||0;
+  const except=localStorage.getItem('sch_force_logout_except');
+  if(at>_sessionStartedAt&&CU.username!==except){
+    CU=null;
+    if(_presenceInterval)clearInterval(_presenceInterval);
+    if(_forceLogoutInterval)clearInterval(_forceLogoutInterval);
+    $('app').classList.remove('on');$('auth-screen').style.display='flex';
+    toast('🚪 قام المدير بتسجيل خروجك من المنصة','i');
+  }
+}
+window.addEventListener('storage',e=>{if(e.key==='sch_force_logout_at')checkForceLogout()});
+
 function afterLogin(){
   $('auth-screen').style.display='none';
   $('app').classList.add('on');
+  document.body.classList.remove('role-admin','role-teacher','role-student');
+  if(CU)document.body.classList.add('role-'+CU.role);
   updateTopbarUser();
   buildSidebar();
   renderNotifBadge();
@@ -1514,6 +2030,10 @@ function afterLogin(){
   // Apply saved avatar
   applyAvatarToTopbar();
   if(typeof startPresenceHeartbeat==='function')startPresenceHeartbeat();
+  _sessionStartedAt=Date.now();
+  if(_forceLogoutInterval)clearInterval(_forceLogoutInterval);
+  _forceLogoutInterval=setInterval(checkForceLogout,4000);
+  applyScreenshotProtection();
 }
 
 function updateTopbarUser(){
@@ -1540,6 +2060,8 @@ function doLogout(){
     CU=null;$('app').classList.remove('on');$('auth-screen').style.display='flex';
     $('l-user').value='';$('l-pass').value='';
     $('top-av-img').src='';$('top-av-img').style.display='none';$('top-av').style.display='';
+    if(_forceLogoutInterval)clearInterval(_forceLogoutInterval);
+    removeScreenshotProtection();
   },'🚪');
 }
 
@@ -1632,19 +2154,37 @@ function buildSidebar(){
     d.onclick=()=>nav_click(view,d);nav.appendChild(d);
   }
   const isSubAdmin=CU.role==='admin'&&CU.perms!=='superadmin';
+  const st=GSettings(); // module on/off toggles, set from ⚙️ الإعدادات > المطور
   if(CU.role==='student'){
     grp('الرئيسية');item('v-student-home','🏠','الصفحة الرئيسية');
-    grp('التواصل');item('v-student-chat','💬','مراسلة الأستاذ');item('v-group-chat','👥','الدردشة الجماعية');
-    grp('أعمالي');item('v-student-project','📚','المشاريع');item('v-student-calendar','📅','التقويم');
-    grp('أخرى');item('v-leaderboard','🏆','لوحة الشرف');item('v-support','🆘','الدعم والمساعدة');item('v-profile','👤','ملفي الشخصي');
+    if(st.modChat||st.modGroupChat){
+      grp('التواصل');
+      if(st.modChat)item('v-student-chat','💬','رسائل الأستاذ');
+      if(st.modGroupChat)item('v-group-chat','👥','الدردشة الجماعية');
+    }
+    if(st.modProjects){grp('أعمالي');item('v-student-project','📚','المشاريع');if(st.modCalendar)item('v-student-calendar','📅','التقويم');}
+    else if(st.modCalendar){grp('أعمالي');item('v-student-calendar','📅','التقويم');}
+    grp('أخرى');
+    if(st.modSupport)item('v-support','🆘','الدعم والمساعدة');
+    item('v-profile','👤','ملفي الشخصي');
   } else if(CU.role==='teacher'){
     grp('الرئيسية');item('v-teacher-home','🏠','لوحة التحكم');
-    grp('التواصل');item('v-teacher-chat','💬','محادثات التلاميذ');item('v-teacher-group-chat','👥','الدردشة الجماعية');
-    grp('المحتوى');item('v-teacher-projects','📁','المشاريع الواردة');item('v-teacher-suggestions','📢','اقتراح مشاريع');item('v-teacher-calendar','📅','التقويم');
-    grp('أخرى');item('v-leaderboard','🏆','لوحة الشرف');item('v-support','🆘','الدعم');item('v-profile','👤','ملفي الشخصي');
+    if(st.modChat||st.modGroupChat){
+      grp('التواصل');
+      if(st.modChat)item('v-teacher-chat','📢','إرسال للتلاميذ');
+      if(st.modGroupChat)item('v-teacher-group-chat','👥','الدردشة الجماعية');
+    }
+    if(st.modProjects||st.modCalendar){
+      grp('المحتوى');
+      if(st.modProjects){item('v-teacher-projects','📁','المشاريع الواردة');item('v-teacher-suggestions','📢','اقتراح مشاريع');}
+      if(st.modCalendar)item('v-teacher-calendar','📅','التقويم');
+    }
+    grp('أخرى');
+    if(st.modSupport)item('v-support','🆘','الدعم');
+    item('v-profile','👤','ملفي الشخصي');
   } else {
     grp('الإدارة');item('v-admin','🛡️','لوحة الإدارة');item('v-admin-chat','💬','التواصل');
-    grp('أخرى');item('v-profile','👤','ملفي الشخصي');
+    grp('أخرى');item('v-profile','👤','ملفي الشخصي');item('v-admin-settings','⚙️','الإعدادات');
   }
 }
 
@@ -1654,7 +2194,7 @@ function nav(view){
   const el=$(view);if(el)el.classList.add('on');
   const ni=$('ni-'+view);if(ni)ni.classList.add('on');
   if(view==='v-student-home') renderStudentHome();
-  else if(view==='v-student-chat') buildStudentPrivateChat();
+  else if(view==='v-student-chat') renderStudentBroadcastFeed();
   else if(view==='v-group-chat') buildGroupChat('group-chat-wrap');
   else if(view==='v-student-project'){renderSuggestions();renderMyProjects();renderProjMembers()}
   else if(view==='v-student-calendar') renderCalendar('calendar-view');
@@ -1664,11 +2204,11 @@ function nav(view){
   else if(view==='v-teacher-calendar') renderEvents();
   else if(view==='v-teacher-chat') buildTeacherChatList();
   else if(view==='v-teacher-group-chat') buildGroupChat('teacher-group-wrap');
-  else if(view==='v-leaderboard') renderLeaderboard();
   else if(view==='v-admin'){renderAdminStats();renderAdminUsers();renderSIDList();renderAdminProjects();renderAdminMessages();renderAdminActivity();renderAdminSupport();renderBroadcastHistory();renderAdminsList();renderMaintenancePanel();populateNewAdminSelect()}
   else if(view==='v-admin-chat') buildAdminChatList();
   else if(view==='v-support') renderSupportReplies();
   else if(view==='v-profile') loadProfileForm();
+  else if(view==='v-admin-settings') renderAdminSettings();
   closeNotif();
   if(window.innerWidth<=768)$('sidebar').classList.remove('mob-on');
 }
@@ -2545,22 +3085,12 @@ function renderStudentHome(){
   const myProjects=GP().filter(p=>p.from===CU.username);
   const myMsgs=GM().filter(m=>m.from===CU.username||m.to===CU.username);
   const events=GEv().filter(e=>new Date(e.date)>=new Date());
-  const lb=buildLeaderboardData();const rank=lb.findIndex(x=>x.user===CU.username)+1;
   $('st-proj-count').textContent=myProjects.length;
   $('st-msg-count').textContent=myMsgs.length;
   $('st-event-count').textContent=events.length;
-  $('st-rank').textContent=rank>0?'#'+rank:'—';
   const sugs=GSug().slice(0,3);
   $('home-suggestions').innerHTML=sugs.length?sugs.map(s=>`<div class="sug-card"><div class="sug-info"><div class="st">${s.title}</div><div class="sd">${s.desc?.slice(0,60)||''}${s.deadline?` | التسليم: ${fmt(s.deadline)}`:''}</div></div><button class="btn btn-sm btn-primary" onclick="nav('v-student-project')">عرض</button></div>`).join(''):'<div class="empty-state" style="padding:16px"><p>لا توجد مشاريع مقترحة</p></div>';
   $('home-events').innerHTML=events.slice(0,4).map(e=>`<div class="ev-card"><div class="ev-date-badge">📅 ${fmt(e.date)}</div><div class="et">${e.title}</div><div class="ed">${e.desc||''}</div></div>`).join('')||'<div class="empty-state" style="padding:16px"><p>لا توجد مواعيد قادمة</p></div>';
-  const lbData=buildLeaderboardData().slice(0,5);
-  $('home-leaderboard').innerHTML=lbData.length?lbData.map((x,i)=>`<div class="lb-item">
-    <div class="lb-rank" style="background:${i===0?'var(--accent3)':i===1?'#94a3b8':i===2?'#cd7f32':'var(--bg3)'}">
-      ${i===0?'🥇':i===1?'🥈':i===2?'🥉':i+1}
-    </div>
-    <div style="flex:1"><div style="font-weight:700;font-size:.86rem">${x.name}</div><div style="font-size:.7rem;color:var(--muted)">${x.count} مشروع</div></div>
-    <span class="badge badge-yellow">${x.score} نقطة</span>
-  </div>`).join(''):'<div class="empty-state" style="padding:16px"><p>لا يوجد بيانات بعد</p></div>';
 }
 
 // ============================================================
@@ -2602,11 +3132,12 @@ function renderTeacherHome(){
       ${p.grade!=null?`<span class="badge badge-green">⭐ ${p.grade}/20</span>`:'<span class="badge badge-yellow">لم يُقيَّم</span>'}
     </div>
   </div>`).join(''):'<div class="empty-state" style="padding:16px"><p>لا توجد مشاريع</p></div>';
-  const convs=students.slice(0,5);
-  $('t-convos-home').innerHTML=convs.length?convs.map(s=>`<div class="conv-item" onclick="nav('v-teacher-chat');setTimeout(()=>openTeacherChatWith('${s.username}'),100)">
-    <div class="conv-av" style="background:linear-gradient(135deg,var(--accent),var(--purple))">${s.name[0]}</div>
-    <div class="conv-info"><div class="conv-name">${s.name}</div><div class="conv-last">${s.branch||s.year||''}</div></div>
-  </div>`).join(''):'<div class="empty-state" style="padding:16px"><p>لا يوجد تلاميذ مسجلون</p></div>';
+  const bcs=GBC().filter(b=>b.from===CU.username||b.fromRole==='teacher').slice(0,4);
+  $('t-convos-home').innerHTML=bcs.length?bcs.map(b=>`<div class="t-bc-item">
+    <div class="bc-meta"><span>📢 ${b.time}</span><span class="badge badge-blue" style="margin-right:6px">${b.count||0} تلميذ</span></div>
+    ${b.title&&b.title!=='رسالة جماعية'?`<div style="font-weight:800;font-size:.85rem;margin:4px 0">${escHtml(b.title)}</div>`:''}
+    ${b.msg?`<div class="bc-msg">${escHtml((b.msg||'').slice(0,80))}</div>`:''}
+  </div>`).join(''):'<div class="empty-state" style="padding:16px"><p>لم ترسل أي رسالة جماعية بعد</p></div>';
 }
 
 function renderTeacherProjects(){
@@ -2664,10 +3195,11 @@ function renderSuggestions(){
 function renderMyProjects(){
   const projs=GP().filter(p=>p.from===CU.username);
   const el=$('my-projects');if(!el)return;
+  const showGrades=GSettings().showGradesToStudents;
   el.innerHTML=projs.length?projs.map(p=>`<div class="proj-card">
     <div class="pt">${p.title}</div>
     <div class="pm">${p.time}</div>
-    ${p.grade!=null?`<div style="margin-top:6px"><span class="badge badge-green">⭐ ${p.grade}/20</span>${p.note?`<span style="font-size:.76rem;color:var(--muted);margin-right:8px">💬 ${p.note}</span>`:''}</div>`:'<span class="badge badge-yellow" style="margin-top:4px;display:inline-block">في انتظار التقييم</span>'}
+    ${!showGrades?'<span class="badge badge-gray" style="margin-top:4px;display:inline-block">تم الإرسال</span>':p.grade!=null?`<div style="margin-top:6px"><span class="badge badge-green">⭐ ${p.grade}/20</span>${p.note?`<span style="font-size:.76rem;color:var(--muted);margin-right:8px">💬 ${p.note}</span>`:''}</div>`:'<span class="badge badge-yellow" style="margin-top:4px;display:inline-block">في انتظار التقييم</span>'}
   </div>`).join(''):'<div class="empty-state" style="padding:16px"><p>لم ترسل أي مشروع بعد</p></div>';
 }
 
@@ -2678,17 +3210,31 @@ function renderProjMembers(){
 }
 
 function submitProject(){
+  const s=GSettings();
   const title=$('proj-title').value.trim();const desc=$('proj-desc').value.trim();
   if(!title){toast('أدخل عنوان المشروع','e');return}
+  if(s.requireProjectDesc&&!desc){toast('وصف المشروع إلزامي حسب إعدادات المنصة','e');return}
   const fileInput=$('proj-files');const files=fileInput?.files||[];
+  if(s.maxProjectFiles&&files.length>s.maxProjectFiles){toast(`الحد الأقصى لعدد الملفات هو ${s.maxProjectFiles}`,'e');return}
+  if(s.allowedFileTypes){
+    const allowed=s.allowedFileTypes.split(',').map(x=>x.trim().toLowerCase()).filter(Boolean);
+    const bad=Array.from(files).find(f=>!allowed.includes((f.name.split('.').pop()||'').toLowerCase()));
+    if(allowed.length&&bad){toast(`نوع الملف "${bad.name}" غير مسموح به`,'e');return}
+  }
+  if(s.maxProjectSizeMB){
+    const totalMB=Array.from(files).reduce((sum,f)=>sum+f.size,0)/(1024*1024);
+    if(totalMB>s.maxProjectSizeMB){toast(`الحجم الإجمالي يتجاوز الحد الأقصى (${s.maxProjectSizeMB}MB)`,'e');return}
+  }
   const saveAndSubmit=(attachments)=>{
     const projs=GP();
     projs.push({from:CU.username,fromName:CU.name,title,desc,files:attachments,time:now(),grade:null,note:null});
     SP(projs);toast('تم إرسال المشروع ✅');
     $('proj-title').value='';$('proj-desc').value='';if(fileInput)fileInput.value='';
     renderMyProjects();
-    const teacher=GU().find(u=>u.role==='teacher');
-    if(teacher)pushNotif({to:teacher.username,text:`📁 مشروع جديد من ${CU.name}: ${title}`,sender:CU.username});
+    if(s.notifyTeacherOnUpload){
+      const teacher=GU().find(u=>u.role==='teacher');
+      if(teacher)pushNotif({to:teacher.username,text:`📁 مشروع جديد من ${CU.name}: ${title}`,sender:CU.username});
+    }
     pushActivity({user:CU.username,name:CU.name,role:CU.role,action:`إرسال مشروع: ${title}`});
   };
   if(files.length){
@@ -2709,7 +3255,7 @@ function submitGrade(){
   const i=+$('grade-proj-idx').value;const g=parseFloat($('grade-val').value);const note=$('grade-note').value.trim();
   if(isNaN(g)||g<0||g>20){toast('أدخل درجة صحيحة من 0 إلى 20','e');return}
   const projs=GP();projs[i].grade=g;projs[i].note=note;SP(projs);
-  pushNotif({to:projs[i].from,text:`⭐ تقييم مشروعك "${projs[i].title}": ${g}/20${note?' — '+note:''}`,sender:CU.username});
+  if(GSettings().notifyStudentOnGrade)pushNotif({to:projs[i].from,text:`⭐ تقييم مشروعك "${projs[i].title}": ${g}/20${note?' — '+note:''}`,sender:CU.username});
   closeModal('modal-grade');toast('تم التقييم بنجاح ✅');renderTeacherProjects();
 }
 
@@ -2775,29 +3321,6 @@ function openTeacherChatWith(username){
 function closeTeacherChatMobile(){$('teacher-chat-grid')?.classList.add('show-list')}
 
 // ============================================================
-// LEADERBOARD
-// ============================================================
-function buildLeaderboardData(){
-  const projs=GP();const scores={};
-  projs.forEach(p=>{
-    if(!scores[p.from])scores[p.from]={count:0,score:0,name:p.fromName||p.from};
-    scores[p.from].count++;
-    if(p.grade!=null)scores[p.from].score+=p.grade;
-  });
-  return Object.entries(scores).map(([user,d])=>({user,...d})).sort((a,b)=>b.score-a.score||b.count-a.count);
-}
-function renderLeaderboard(){
-  const lb=buildLeaderboardData();const el=$('leaderboard-list');if(!el)return;
-  el.innerHTML=lb.length?lb.map((x,i)=>`<div class="lb-item">
-    <div class="lb-rank" style="min-width:36px;background:${i===0?'var(--accent3)':i===1?'#94a3b8':i===2?'#cd7f32':'var(--bg3)'}">
-      ${i===0?'🥇':i===1?'🥈':i===2?'🥉':i+1}
-    </div>
-    <div style="flex:1"><div style="font-weight:700;font-size:.9rem">${x.name}</div><div style="font-size:.72rem;color:var(--muted)">${x.count} مشروع</div></div>
-    <span class="badge badge-yellow">${x.score} نقطة</span>
-  </div>`).join(''):'<div class="empty-state" style="padding:20px"><p>لا توجد بيانات بعد</p></div>';
-}
-
-// ============================================================
 // SUPPORT
 // ============================================================
 function sendSupport(){
@@ -2823,8 +3346,9 @@ function renderSupportReplies(){
 // ADMIN
 // ============================================================
 function adminTab(tab){
+  if(tab==='firewall'){openFirewallGate();return}
   document.querySelectorAll('.admin-tab').forEach(t=>t.classList.remove('on'));
-  ['users','students-reg','devices','projects','messages','activity','support','broadcast','admins','maintenance'].forEach(t=>{
+  ['users','students-reg','devices','projects','messages','activity','support','broadcast','admins','maintenance','firewall'].forEach(t=>{
     const el=$(`admin-tab-${t}`);if(el)el.style.display='none';
   });
   const el=$(`admin-tab-${tab}`);if(el)el.style.display='block';
@@ -2874,6 +3398,7 @@ function adminAddUser(){
   const role=$('an-role').value;const name=$('an-name').value.trim();const user=$('an-user').value.trim();
   const email=$('an-email').value.trim();const pass=$('an-pass').value;
   if(!name||!user||!email||!pass){toast('أكمل جميع الحقول','e');return}
+  const ppErr=checkPasswordPolicy(pass);if(ppErr){toast(ppErr,'e');return}
   if(GU().find(u=>u.username===user)){toast('اسم المستخدم محجوز','e');return}
   const newUser={username:user,name,email,pass,role,blocked:false,created:now()};
   if(role==='student'){
@@ -3122,30 +3647,46 @@ function adminReplySupport(i){
 /// BROADCAST
 function sendBroadcast(){
   const target=$('bc-target').value;const title=$('bc-title').value.trim();const msg=$('bc-msg').value.trim();
-  if(!title||!msg){toast('أكمل جميع الحقول','e');return}
-  showConfirm(`إرسال رسالة جماعية لـ ${target==='all'?'الجميع':target==='student'?'التلاميذ':'الأساتذة'}؟`,'',()=>{
-    const users=GU().filter(u=>target==='all'||(target===u.role));
-    users.forEach(u=>{pushNotif({to:u.username,text:`📢 ${title}: ${msg}`,sender:'admin'})});
-    const bc=GBC();bc.unshift({target,title,msg,time:now(),count:users.length});SBC(bc);
-    $('bc-title').value='';$('bc-msg').value='';
-    toast(`تم الإرسال لـ ${users.length} مستخدم ✅`);renderBroadcastHistory();
-  },'📢');
+  const fileInput=$('bc-file');
+  if(!title&&!msg&&(!fileInput||!fileInput.files.length)){toast('اكتب رسالة أو أرفق ملفاً','e');return}
+  const doSend=(attachment)=>{
+    showConfirm(`إرسال رسالة جماعية لـ ${target==='all'?'الجميع':target==='student'?'التلاميذ':'الأساتذة'}؟`,'',()=>{
+      const users=GU().filter(u=>u.role!=='admin'&&(target==='all'||(target===u.role)));
+      users.forEach(u=>{pushNotif({to:u.username,text:`📢 ${title||'رسالة جماعية'}: ${(msg||'📎 مرفق').slice(0,80)}`,sender:CU.username})});
+      const bc=GBC();bc.unshift({target,title:title||'رسالة جماعية',msg,file:attachment||null,time:now(),count:users.length,by:CU.username,byName:CU.name});SBC(bc);
+      if($('bc-title'))$('bc-title').value='';if($('bc-msg'))$('bc-msg').value='';if(fileInput)fileInput.value='';
+      toast(`تم الإرسال لـ ${users.length} مستخدم ✅`);renderBroadcastHistory();
+      pushActivity({user:CU.username,name:CU.name,role:CU.role,action:`إرسال جماعي: ${title||'رسالة+مرفق'}`});
+    },'📢');
+  };
+  if(fileInput&&fileInput.files.length){
+    const f=fileInput.files[0];
+    const reader=new FileReader();
+    reader.onload=e=>doSend({name:f.name,size:f.size,type:f.type,data:e.target.result});
+    reader.readAsDataURL(f);
+  } else doSend(null);
 }
 
 function renderBroadcastHistory(){
   const el=$('broadcast-history');if(!el)return;
   const bcs=GBC();
   el.innerHTML=bcs.length?bcs.map(b=>`<div class="proj-card">
-    <div style="display:flex;justify-content:space-between">
-      <div><div class="pt">${b.title}</div><div class="pm">${b.target==='all'?'الجميع':b.target==='student'?'التلاميذ':'الأساتذة'} | ${b.time}</div><div style="font-size:.8rem;margin-top:4px">${b.msg.slice(0,80)}</div></div>
-      <span class="badge badge-blue">${b.count} مستخدم</span>
+    <div style="display:flex;justify-content:space-between;align-items:flex-start">
+      <div style="flex:1">
+        <div class="pt">${b.title||'رسالة جماعية'}</div>
+        <div class="pm">${b.target==='all'?'الجميع':b.target==='student'?'التلاميذ':'الأساتذة'} | ${b.time}${b.byName?' | من: '+b.byName:''}</div>
+        ${b.msg?`<div style="font-size:.8rem;margin-top:4px">${escHtml(b.msg.slice(0,120))}</div>`:''}
+        ${b.file&&b.file.type&&b.file.type.startsWith('image/')?`<img src="${b.file.data}" style="max-width:180px;border-radius:8px;margin-top:6px;cursor:pointer" onclick="window.open(this.src)">`:''}
+        ${b.file&&(!b.file.type||!b.file.type.startsWith('image/'))?`<a href="${b.file.data}" download="${b.file.name}" class="bubble-doc" style="display:inline-flex;margin-top:6px">📎 ${escHtml(b.file.name)}</a>`:''}
+      </div>
+      <span class="badge badge-blue">${b.count||0} مستخدم</span>
     </div>
   </div>`).join(''):'<div class="empty-state" style="padding:16px"><p>لا توجد رسائل جماعية مرسلة</p></div>';
 }
 
 // SUB ADMINS
 function populateNewAdminSelect(){
-  const sel=$('new-admin-user');if(!sel)return;
+  const sel=$('new-admin-user');if(!sel)return; const sel2=$('new-admin-select');if(sel2){sel2.innerHTML=sel.innerHTML}
   const users=GU().filter(u=>u.role!=='admin');
   sel.innerHTML=`<option value="">اختر مستخدماً</option>`+users.map(u=>`<option value="${u.username}">${u.name} — ${u.role==='teacher'?'أستاذ':'تلميذ'}</option>`).join('');
 }
@@ -3213,6 +3754,343 @@ function disableMaintenance(){
   },'✅');
 }
 
+// ============================================================
+// ⚙️ ADMIN SETTINGS PAGE
+// ============================================================
+function escV(t){return String(t==null?'':t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+
+const SEC_DEFS=[
+ {k:'twoFA',label:'تفعيل المصادقة الثنائية (2FA)',type:'toggle'},
+ {k:'minPassLen',label:'الحد الأدنى لطول كلمة المرور',type:'number',min:4,max:32},
+ {k:'passComplexity',label:'فرض استخدام أرقام ورموز في كلمة المرور',type:'toggle'},
+ {k:'passExpiryDays',label:'انتهاء صلاحية كلمة المرور (يوم) — 0 لتعطيل',type:'number',min:0,max:365},
+ {k:'preventPassReuse',label:'منع إعادة استخدام كلمات المرور القديمة',type:'toggle'},
+ {k:'lockAttempts',label:'قفل الحساب بعد عدد محاولات فاشلة — 0 لتعطيل',type:'number',min:0,max:20},
+ {k:'lockDurationMin',label:'مدة قفل الحساب (دقيقة)',type:'number',min:1,max:1440},
+ {k:'logLoginAttempts',label:'تسجيل جميع محاولات الدخول',type:'toggle'},
+ {k:'alertNewDevice',label:'تنبيه عند تسجيل الدخول من جهاز جديد',type:'toggle',note:'تنبيه داخل المنصة فقط، وليس بريداً/SMS فعلياً'},
+ {k:'manageTrustedDevices',label:'إدارة الأجهزة الموثوقة',type:'toggle'},
+ {k:'logUserActivity',label:'تسجيل نشاط المستخدمين (Logs)',type:'toggle'},
+ {k:'monitorSessions',label:'مراقبة الجلسات النشطة',type:'toggle'},
+ {k:'preventDuplicateAccounts',label:'منع الحسابات المكررة',type:'toggle'},
+ {k:'verifyEmail',label:'التحقق من البريد الإلكتروني قبل التفعيل',type:'toggle',note:'يتطلب ربط خدمة بريد فعلية بخادم — يُحفظ هنا فقط'},
+ {k:'verifyPhone',label:'التحقق من رقم الهاتف قبل التفعيل',type:'toggle',note:'يتطلب ربط خدمة SMS فعلية بخادم — يُحفظ هنا فقط'},
+ {k:'ipBlockList',label:'حظر عناوين IP (سطر لكل عنوان)',type:'textarea',note:'يتطلب خادماً (Backend) للتطبيق الفعلي — يُحفظ هنا فقط'},
+ {k:'ipAllowList',label:'القائمة البيضاء — السماح بهذه العناوين فقط',type:'textarea',note:'يتطلب خادماً (Backend) للتطبيق الفعلي — يُحفظ هنا فقط'},
+ {k:'restrictedDownloadUsers',label:'منع تنزيل الملفات لمستخدمين محددين (أسماء، مفصولة بفواصل)',type:'textarea'},
+];
+const PROJ_DEFS=[
+ {k:'projEnabled',label:'تفعيل نظام المشاريع',type:'toggle'},
+ {k:'allowIndividualProjects',label:'السماح بالمشاريع الفردية',type:'toggle'},
+ {k:'allowGroupProjects',label:'السماح بالمشاريع الجماعية',type:'toggle'},
+ {k:'maxTeamMembers',label:'الحد الأقصى لعدد أعضاء الفريق',type:'number',min:1,max:20},
+ {k:'maxProjectSizeMB',label:'الحد الأقصى لحجم المشروع (MB) — 0 لتعطيل',type:'number',min:0,max:500},
+ {k:'maxProjectFiles',label:'الحد الأقصى لعدد الملفات — 0 لتعطيل',type:'number',min:0,max:50},
+ {k:'allowedFileTypes',label:'أنواع الملفات المسموح بها (بدون نقطة، مفصولة بفواصل)',type:'text'},
+ {k:'requireProjectDesc',label:'إلزامية وصف المشروع',type:'toggle'},
+ {k:'requireProjectTitle',label:'إلزامية عنوان المشروع',type:'toggle',note:'العنوان إلزامي دائماً في واجهة الإرسال الحالية'},
+ {k:'allowEditAfterSubmit',label:'السماح بالتعديل بعد الإرسال',type:'toggle'},
+ {k:'submissionDeadline',label:'تحديد موعد نهائي عام للتسليم',type:'date'},
+ {k:'autoCloseAfterDeadline',label:'إغلاق التسليم تلقائياً بعد الموعد',type:'toggle'},
+ {k:'allowReupload',label:'السماح بإعادة رفع المشروع',type:'toggle'},
+ {k:'reuploadLimit',label:'عدد مرات إعادة الرفع المسموح بها',type:'number',min:1,max:20},
+ {k:'enableProjectEvaluation',label:'تفعيل تقييم المشاريع',type:'toggle'},
+ {k:'showGradesToStudents',label:'إظهار الدرجات للتلاميذ',type:'toggle'},
+ {k:'allowProjectComments',label:'السماح بالتعليقات على المشاريع',type:'toggle',note:'ميزة التعليقات على المشاريع غير مُفعّلة بعد في الواجهة'},
+ {k:'autoArchiveOldProjects',label:'أرشفة المشاريع القديمة تلقائياً',type:'toggle'},
+ {k:'notifyTeacherOnUpload',label:'إشعار الأستاذ عند رفع مشروع جديد',type:'toggle'},
+ {k:'notifyStudentOnGrade',label:'إشعار التلميذ عند تقييم مشروعه',type:'toggle'},
+];
+
+function settingRowHTML(d,val){
+  const id='cfg-'+d.k;let ctrl='';
+  if(d.type==='toggle')ctrl=`<label class="tgl"><input type="checkbox" id="${id}" ${val?'checked':''}><span class="tgl-sl"></span></label>`;
+  else if(d.type==='number')ctrl=`<input type="number" id="${id}" value="${escV(val)}" min="${d.min??0}" max="${d.max??9999}">`;
+  else if(d.type==='date')ctrl=`<input type="date" id="${id}" value="${escV(val)}" style="width:160px">`;
+  else if(d.type==='textarea')ctrl=`<textarea id="${id}" rows="2" style="width:230px;resize:vertical">${escV(val)}</textarea>`;
+  else ctrl=`<input type="text" id="${id}" value="${escV(val)}" style="width:230px">`;
+  return `<div class="set-row"><div class="set-info"><div class="set-label">${d.label}</div>${d.note?`<div class="set-desc">⚠️ ${d.note}</div>`:''}</div><div class="set-ctrl">${ctrl}</div></div>`;
+}
+function renderSettingsList(containerId,defs){
+  const s=GSettings();const el=$(containerId);if(!el)return;
+  el.innerHTML=defs.map(d=>settingRowHTML(d,s[d.k])).join('');
+}
+function collectSettingsList(defs){
+  const s=GSettings();
+  defs.forEach(d=>{
+    const elx=$('cfg-'+d.k);if(!elx)return;
+    if(d.type==='toggle')s[d.k]=elx.checked;
+    else if(d.type==='number')s[d.k]=Number(elx.value)||0;
+    else s[d.k]=elx.value;
+  });
+  SSettings(s);return s;
+}
+
+function renderAdminSettings(){
+  document.querySelectorAll('#settings-tabs .admin-tab').forEach((t,i)=>t.classList.toggle('on',i===0));
+  ['security','privacy','projects','developer'].forEach(t=>{const el=$('set-tab-'+t);if(el)el.style.display=t==='security'?'block':'none'});
+  renderSettingsList('set-list-security',SEC_DEFS);
+  renderSettingsList('set-list-projects',PROJ_DEFS);
+  renderPrivacySettings();
+  renderDevSettings();
+  renderBackupsList();
+  renderErrorLogList();
+  renderDevNotesList();
+  refreshSystemMonitors();
+}
+function adminSettingsTab(tab){
+  document.querySelectorAll('#settings-tabs .admin-tab').forEach(t=>t.classList.remove('on'));
+  ['security','privacy','projects','developer'].forEach(t=>{const el=$('set-tab-'+t);if(el)el.style.display='none'});
+  $('set-tab-'+tab).style.display='block';
+  if(typeof event!=='undefined'&&event.target)event.target.classList.add('on');
+}
+function saveSecuritySettings(){collectSettingsList(SEC_DEFS);toast('تم حفظ إعدادات الأمان ✅');pushActivity({user:CU.username,name:CU.name,role:CU.role,action:'تحديث إعدادات الأمان'})}
+function saveProjectSettings(){collectSettingsList(PROJ_DEFS);toast('تم حفظ إعدادات المشاريع ✅');pushActivity({user:CU.username,name:CU.name,role:CU.role,action:'تحديث إعدادات المشاريع'})}
+
+// --- emergency security actions ---
+function forceLogoutAllUsers(){
+  showConfirm('تسجيل خروج إجباري لجميع المستخدمين؟','سيتم إخراج كل من هو متصل الآن من المنصة (باستثناء جلستك الحالية)',()=>{
+    localStorage.setItem('sch_force_logout_at',String(Date.now()));
+    localStorage.setItem('sch_force_logout_except',CU.username);
+    toast('✅ تم تنفيذ تسجيل الخروج الإجباري');
+    pushActivity({user:CU.username,name:CU.name,role:CU.role,action:'تسجيل خروج إجباري لجميع المستخدمين'});
+  },'🚪');
+}
+function emergencyLockPlatform(){
+  showConfirm('🚨 تفعيل وضع الطوارئ؟','سيتم إيقاف المنصة بالكامل أمام جميع المستخدمين فوراً، ويشمل تسجيل خروج إجباري',()=>{
+    SMaint({on:true,msg:'🚨 وضع الطوارئ: تم إيقاف المنصة مؤقتاً من قِبل الإدارة. نعتذر عن الإزعاج.',openTime:''});
+    localStorage.setItem('sch_force_logout_at',String(Date.now()));
+    localStorage.setItem('sch_force_logout_except',CU.username);
+    toast('🚨 تم تفعيل وضع الطوارئ');
+    pushActivity({user:CU.username,name:CU.name,role:CU.role,action:'🚨 تفعيل وضع الطوارئ'});
+    if(typeof renderMaintenancePanel==='function')renderMaintenancePanel();
+  },'🚨');
+}
+
+// --- 🔒 privacy / screenshot protection ---
+function renderPrivacySettings(){
+  const s=GSettings();
+  [['cfg-screenshotProtection','screenshotProtection'],['cfg-blurOnBlur','blurOnBlur'],['cfg-watermarkEnabled','watermarkEnabled'],
+   ['cfg-disableCopyRightClick','disableCopyRightClick'],['cfg-logScreenshotAttempts','logScreenshotAttempts']]
+   .forEach(([id,k])=>{if($(id))$(id).checked=s[k]});
+}
+function savePrivacySettings(){
+  const s=GSettings();
+  s.screenshotProtection=$('cfg-screenshotProtection').checked;
+  s.blurOnBlur=$('cfg-blurOnBlur').checked;
+  s.watermarkEnabled=$('cfg-watermarkEnabled').checked;
+  s.disableCopyRightClick=$('cfg-disableCopyRightClick').checked;
+  s.logScreenshotAttempts=$('cfg-logScreenshotAttempts').checked;
+  SSettings(s);applyScreenshotProtection();
+  toast('تم حفظ إعدادات حماية الشاشة ✅');
+  pushActivity({user:CU.username,name:CU.name,role:CU.role,action:'تحديث إعدادات حماية الشاشة'});
+}
+let _ssBound=false;
+function applyScreenshotProtection(){
+  const s=GSettings();
+  if(!s.screenshotProtection){removeScreenshotProtection();return}
+  document.body.classList.add('screenshot-protected');
+  renderWatermark();
+  if(!_ssBound){
+    _ssBound=true;
+    window.addEventListener('blur',_ssOnBlur);
+    window.addEventListener('focus',_ssOnFocus);
+    document.addEventListener('visibilitychange',_ssOnVisibility);
+    document.addEventListener('keyup',_ssOnKeyup);
+    document.addEventListener('contextmenu',_ssOnContext);
+    document.addEventListener('copy',_ssOnCopy);
+    document.addEventListener('selectstart',_ssOnSelect);
+  }
+}
+function removeScreenshotProtection(){
+  document.body.classList.remove('screenshot-protected');
+  if($('screenshot-shield'))$('screenshot-shield').style.display='none';
+  if($('watermark-layer'))$('watermark-layer').classList.remove('on');
+}
+function _ssOnBlur(){const s=GSettings();if(s.screenshotProtection&&s.blurOnBlur&&CU&&$('screenshot-shield'))$('screenshot-shield').style.display='flex'}
+function _ssOnFocus(){if($('screenshot-shield'))$('screenshot-shield').style.display='none'}
+function _ssOnVisibility(){const s=GSettings();if(!s.screenshotProtection||!s.blurOnBlur||!CU)return;if($('screenshot-shield'))$('screenshot-shield').style.display=document.hidden?'flex':'none'}
+function _ssOnKeyup(e){
+  const s=GSettings();if(!s.screenshotProtection||!CU)return;
+  if(e.key==='PrintScreen'){
+    if(s.logScreenshotAttempts)pushActivity({user:CU.username,name:CU.name,role:CU.role,action:'⚠️ محاولة لقطة شاشة محتملة (PrintScreen)'});
+    toast('⚠️ تم رصد محاولة لقطة شاشة وتسجيلها','i');
+    try{navigator.clipboard&&navigator.clipboard.writeText('')}catch(_){}
+  }
+}
+function _ssOnContext(e){const s=GSettings();if(s.screenshotProtection&&s.disableCopyRightClick)e.preventDefault()}
+function _ssOnCopy(e){const s=GSettings();if(s.screenshotProtection&&s.disableCopyRightClick)e.preventDefault()}
+function _ssOnSelect(e){const s=GSettings();if(s.screenshotProtection&&s.disableCopyRightClick&&!['INPUT','TEXTAREA'].includes(e.target.tagName))e.preventDefault()}
+function renderWatermark(){
+  const s=GSettings();const layer=$('watermark-layer');if(!layer||!CU)return;
+  if(!s.screenshotProtection||!s.watermarkEnabled){layer.classList.remove('on');return}
+  const text=`${CU.name} — ${CU.username} — ${now()}`;
+  let html='';
+  for(let y=0;y<10;y++)for(let x=0;x<4;x++)html+=`<span style="top:${y*120}px;right:${-100+x*260}px">${text}</span>`;
+  layer.innerHTML=html;layer.classList.add('on');
+}
+
+// --- 🤖 developer tab ---
+const MOD_KEYS=['modChat','modGroupChat','modProjects','modSupport','modCalendar'];
+function renderDevSettings(){
+  const s=GSettings();
+  if($('cfg-debugMode'))$('cfg-debugMode').checked=s.debugMode;
+  MOD_KEYS.forEach(k=>{if($('cfg-'+k))$('cfg-'+k).checked=s[k]});
+  if($('cfg-autoBackupFreq'))$('cfg-autoBackupFreq').value=s.autoBackupFreq;
+  if($('api-key-display'))$('api-key-display').value=s.apiKey||'لم يتم إنشاء مفتاح بعد';
+}
+function saveDevSettings(){
+  const s=GSettings();
+  s.debugMode=$('cfg-debugMode').checked;
+  MOD_KEYS.forEach(k=>{s[k]=$('cfg-'+k).checked});
+  s.autoBackupFreq=$('cfg-autoBackupFreq').value;
+  SSettings(s);
+  if($('debug-badge'))$('debug-badge').style.display=s.debugMode?'block':'none';
+  buildSidebar();
+  toast('تم حفظ إعدادات المطور والوحدات ✅');
+  pushActivity({user:CU.username,name:CU.name,role:CU.role,action:'تحديث إعدادات المطور والوحدات البرمجية'});
+}
+function generateApiKey(){
+  const key='sk_'+Math.random().toString(36).slice(2,10)+Math.random().toString(36).slice(2,10);
+  const s=GSettings();s.apiKey=key;SSettings(s);if($('api-key-display'))$('api-key-display').value=key;
+  toast('تم إنشاء مفتاح API جديد 🔑');
+  pushActivity({user:CU.username,name:CU.name,role:CU.role,action:'إنشاء مفتاح API جديد'});
+}
+function copyApiKey(){
+  const v=$('api-key-display')?.value;if(!v||v.includes('لم يتم'))return;
+  navigator.clipboard?.writeText(v);toast('تم نسخ المفتاح 📋');
+}
+function gotoAdminTab(tab){
+  nav('v-admin');
+  setTimeout(()=>{const el=document.querySelector(`.admin-tab[onclick="adminTab('${tab}')"]`);if(el)el.click();},60);
+}
+
+// --- 💾 database export / import / backups ---
+function exportDatabase(){
+  const data={};Object.keys(localStorage).forEach(k=>{if(k.startsWith('sch_'))data[k]=localStorage.getItem(k)});
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`school-backup-${Date.now()}.json`;
+  document.body.appendChild(a);a.click();a.remove();
+  toast('تم تصدير قاعدة البيانات ✅');
+  pushActivity({user:CU.username,name:CU.name,role:CU.role,action:'تصدير قاعدة البيانات'});
+}
+function importDatabaseFile(input){
+  const file=input.files[0];if(!file)return;
+  showConfirm('استيراد قاعدة البيانات؟','سيتم استبدال البيانات الحالية بالكامل بمحتوى الملف المستورد',()=>{
+    const r=new FileReader();
+    r.onload=e=>{
+      try{
+        const data=JSON.parse(e.target.result);
+        Object.keys(data).forEach(k=>{if(k.startsWith('sch_'))localStorage.setItem(k,data[k])});
+        toast('تم استيراد قاعدة البيانات ✅ — سيُعاد تحميل الصفحة');
+        setTimeout(()=>location.reload(),1200);
+      }catch(err){toast('ملف غير صالح ❌','e')}
+    };
+    r.readAsText(file);
+  });
+  input.value='';
+}
+function createInstantBackup(){
+  const data={};Object.keys(localStorage).forEach(k=>{if(k.startsWith('sch_')&&k!=='sch_backups')data[k]=localStorage.getItem(k)});
+  const backups=GBackups();backups.unshift({id:'bk'+Date.now(),time:now(),data});
+  if(backups.length>10)backups.length=10;SBackups(backups);renderBackupsList();
+  toast('تم إنشاء نسخة احتياطية فورية 💾');
+  pushActivity({user:CU.username,name:CU.name,role:CU.role,action:'إنشاء نسخة احتياطية فورية'});
+}
+function restoreBackup(id){
+  const b=GBackups().find(x=>x.id===id);if(!b)return;
+  showConfirm('استعادة هذه النسخة الاحتياطية؟','سيتم استبدال البيانات الحالية بالكامل — سيُعاد تحميل الصفحة',()=>{
+    Object.keys(b.data).forEach(k=>localStorage.setItem(k,b.data[k]));
+    toast('تم استعادة النسخة الاحتياطية ✅');
+    setTimeout(()=>location.reload(),1200);
+  });
+}
+function deleteBackup(id){showConfirm('حذف هذه النسخة الاحتياطية؟','',()=>{SBackups(GBackups().filter(x=>x.id!==id));renderBackupsList();toast('تم الحذف')})}
+function renderBackupsList(){
+  const el=$('backups-list');if(!el)return;
+  const backups=GBackups();
+  el.innerHTML=backups.length?backups.map(b=>`<div class="set-action-btn"><div><div class="sai">💾 ${b.time}</div><div class="sad">${Math.round(JSON.stringify(b.data).length/1024)} KB</div></div><div style="display:flex;gap:6px"><button class="btn btn-sm btn-success" onclick="restoreBackup('${b.id}')">استعادة</button><button class="btn btn-sm btn-danger" onclick="deleteBackup('${b.id}')">🗑️</button></div></div>`).join(''):'<div class="empty-state" style="padding:10px"><p>لا توجد نسخ احتياطية محفوظة</p></div>';
+}
+
+// --- 🧹 maintenance / monitors ---
+const SCH_KEYS=['sch_users','sch_sid','sch_msgs','sch_group','sch_proj','sch_sug','sch_events','sch_notif','sch_activity','sch_support','sch_broadcast','sch_logins','sch_shortcodes','sch_maintenance','sch_settings','sch_backups','sch_errorlog','sch_devnotes','sch_loginfails'];
+function clearAppCache(){
+  showConfirm('مسح الكاش؟','سيتم مسح بيانات الجلسة المؤقتة فقط (لن يؤثر على المستخدمين أو المشاريع)',()=>{
+    sessionStorage.clear();toast('تم مسح الكاش 🧹');
+    pushActivity({user:CU.username,name:CU.name,role:CU.role,action:'مسح الكاش'});
+  });
+}
+function checkDatabaseIntegrity(){
+  let bad=[];
+  SCH_KEYS.forEach(k=>{try{JSON.parse(localStorage.getItem(k)||'null')}catch(_){bad.push(k)}});
+  toast(bad.length?`⚠️ تم العثور على ${bad.length} مفتاح تالف`:'✅ قاعدة البيانات سليمة، لا توجد أعطال',bad.length?'e':undefined);
+  pushActivity({user:CU.username,name:CU.name,role:CU.role,action:'فحص سلامة قاعدة البيانات'});
+  return bad;
+}
+function repairCorruptedTables(){
+  const defaults={sch_users:'[]',sch_sid:'[]',sch_msgs:'[]',sch_group:'[]',sch_proj:'[]',sch_sug:'[]',sch_events:'[]',sch_notif:'[]',sch_activity:'[]',sch_support:'[]',sch_broadcast:'[]',sch_logins:'[]',sch_shortcodes:'{}',sch_maintenance:'{"on":false,"msg":"","openTime":""}',sch_backups:'[]',sch_errorlog:'[]',sch_devnotes:'[]',sch_loginfails:'{}'};
+  const bad=checkDatabaseIntegrity();
+  bad.forEach(k=>{if(defaults[k])localStorage.setItem(k,defaults[k])});
+  toast(bad.length?`🔧 تم إصلاح ${bad.length} جدول تالف`:'لا حاجة للإصلاح، كل الجداول سليمة');
+  pushActivity({user:CU.username,name:CU.name,role:CU.role,action:'إصلاح الجداول التالفة'});
+}
+function refreshSystemMonitors(){
+  if($('dev-storage-stat'))$('dev-storage-stat').textContent=`${Math.round(JSON.stringify(localStorage).length/1024)} KB`;
+  if($('dev-memory-stat')){
+    const mem=performance.memory;
+    $('dev-memory-stat').textContent=mem?`${Math.round(mem.usedJSHeapSize/1048576)} MB / ${Math.round(mem.jsHeapSizeLimit/1048576)} MB`:'غير متاح في هذا المتصفح';
+  }
+  if($('dev-online-stat')){
+    const ls=GLastSeen();const t=Date.now();
+    const onlineCount=Object.values(ls).filter(x=>t-x<60000).length;
+    $('dev-online-stat').textContent=`${onlineCount} متصل الآن (تقريبي، لهذا المتصفح فقط)`;
+  }
+}
+function restartSystemSim(){showConfirm('إعادة تشغيل النظام؟','سيتم إعادة تحميل الصفحة لجلستك الحالية',()=>location.reload())}
+function resetSettingsToDefault(){
+  showConfirm('إعادة ضبط الإعدادات الافتراضية؟','سيُعاد ضبط إعدادات هذه الصفحة فقط (لن يؤثر على المستخدمين أو المشاريع)',()=>{
+    SSettings(defaultSettings());renderAdminSettings();buildSidebar();removeScreenshotProtection();
+    toast('تمت إعادة ضبط الإعدادات ✅');
+    pushActivity({user:CU.username,name:CU.name,role:CU.role,action:'إعادة ضبط الإعدادات الافتراضية'});
+  });
+}
+
+// --- 🗑️ bulk delete zone ---
+function delAllNotifications(){showConfirm('حذف جميع الإشعارات؟','',()=>{SN([]);renderNotifBadge();toast('تم الحذف');pushActivity({user:CU.username,name:CU.name,role:CU.role,action:'حذف جميع الإشعارات'})})}
+function delAllMessages(){
+  showConfirm('حذف جميع الرسائل؟','يشمل المحادثات الخاصة والجماعية لجميع المستخدمين',()=>{
+    Object.keys(localStorage).filter(k=>k.startsWith('sch_chat_')).forEach(k=>localStorage.removeItem(k));
+    SG([]);SMI([]);toast('تم حذف جميع الرسائل');
+    pushActivity({user:CU.username,name:CU.name,role:CU.role,action:'حذف جميع الرسائل'});
+  });
+}
+function delAllProjects(){showConfirm('حذف جميع المشاريع؟','',()=>{SP([]);toast('تم الحذف');pushActivity({user:CU.username,name:CU.name,role:CU.role,action:'حذف جميع المشاريع'})})}
+function delAllBlockedAccounts(){
+  showConfirm('حذف جميع الحسابات المحظورة (المعلّقة)؟','لا يمكن التراجع عن هذا الإجراء',()=>{
+    const remaining=GU().filter(u=>!u.blocked);const removed=GU().length-remaining.length;
+    SU(remaining);toast(`تم حذف ${removed} حساب محظور`);
+    pushActivity({user:CU.username,name:CU.name,role:CU.role,action:'حذف الحسابات المحظورة/المعلّقة'});
+    if(typeof renderAdminUsers==='function')renderAdminUsers();
+  });
+}
+
+// --- 📜 logs & dev notes ---
+function renderErrorLogList(){
+  const el=$('error-log-list');if(!el)return;const log=GErrLog();
+  el.innerHTML=log.length?log.slice(0,30).map(e=>`<div class="set-action-btn"><div><div class="sai">⚠️ ${escHtml(e.msg)}</div><div class="sad">${e.src||''} — ${e.time}</div></div></div>`).join(''):'<div class="empty-state" style="padding:10px"><p>لا توجد أخطاء مسجلة 👍</p></div>';
+}
+function clearErrorLog(){showConfirm('مسح سجل الأخطاء؟','',()=>{SErrLog([]);renderErrorLogList();toast('تم المسح')})}
+function addDevNote(){
+  const v=$('devnote-input');if(!v||!v.value.trim())return;
+  const notes=GDevNotes();notes.unshift({text:v.value.trim(),by:CU.name,time:now()});
+  if(notes.length>100)notes.length=100;SDevNotes(notes);v.value='';renderDevNotesList();
+  toast('تم تسجيل الملاحظة 📝 — لا يوجد خادم لتنفيذها فعلياً');
+}
+function renderDevNotesList(){
+  const el=$('devnotes-list');if(!el)return;const notes=GDevNotes();
+  el.innerHTML=notes.length?notes.slice(0,20).map(n=>`<div class="set-action-btn"><div><div class="sai">📝 ${escHtml(n.text)}</div><div class="sad">${n.by} — ${n.time}</div></div></div>`).join(''):'<div class="empty-state" style="padding:10px"><p>لا توجد ملاحظات</p></div>';
+}
+
 // ADMIN CHAT
 let _adminChatTarget=null;
 function buildAdminChatList(){
@@ -3260,6 +4138,318 @@ document.head.appendChild(style);
   const users=GU();
   if(users.length===1&&users[0].role==='admin'){CU=users[0];recordLogin(CU,'دخول تلقائي');afterLogin()}
 })();
+
+// ============================================================
+// FIREWALL GATE (PIN-protected)
+// ============================================================
+const FW_DEFAULT_PIN = '1234'; // default PIN - admin should change this
+function GFwSettings(){return JSON.parse(localStorage.getItem('sch_firewall')||JSON.stringify({
+  pin: FW_DEFAULT_PIN,
+  'fw-rate-limit':true,'fw-syn-flood':true,'fw-http-flood':true,'fw-captcha':false,
+  'fw-brute-lock':true,'fw-backoff':true,'fw-auto-ip-ban':true,
+  'fw-sql-inject':true,'fw-xss':true,'fw-csrf':true,
+  'fw-file-scan':true,'fw-file-types':true,'fw-https':true,
+  'fw-sec-log':true,'fw-alert':true,'fw-emergency':false,
+  log:[]
+}))}
+function SFwSettings(v){localStorage.setItem('sch_firewall',JSON.stringify(v))}
+
+let _fwUnlocked=false;
+function openFirewallGate(){
+  if(_fwUnlocked){adminTabFirewall();return;}
+  // Build gate modal
+  const gate=document.createElement('div');
+  gate.className='fw-gate';gate.id='fw-gate-overlay';
+  const fw=GFwSettings();
+  const pinLen=(fw.pin||FW_DEFAULT_PIN).length;
+  gate.innerHTML=`
+    <div class="fw-gate-box">
+      <div class="fw-gate-icon">🔥</div>
+      <div class="fw-gate-title">جدار الحماية</div>
+      <div class="fw-gate-sub">أدخل رمز PIN للوصول إلى إعدادات الحماية</div>
+      <div class="fw-pin-input" id="fw-pin-inputs">
+        ${Array.from({length:4}).map((_,i)=>`<input type="password" maxlength="1" inputmode="numeric" id="fwp-${i}" oninput="fwPinNext(${i})" onkeydown="fwPinKey(event,${i})">`).join('')}
+      </div>
+      <div id="fw-pin-err" style="color:var(--danger);font-size:.78rem;min-height:18px;margin-bottom:10px"></div>
+      <div style="display:flex;gap:8px">
+        <button class="btn btn-danger" style="flex:1" onclick="checkFwPin()">🔓 فتح</button>
+        <button class="btn btn-ghost" onclick="closeFwGate()">إلغاء</button>
+      </div>
+      <div style="font-size:.7rem;color:var(--muted2);margin-top:12px">الرمز الافتراضي: 1234 — يمكنك تغييره من إعدادات جدار الحماية</div>
+    </div>`;
+  document.body.appendChild(gate);
+  setTimeout(()=>document.getElementById('fwp-0')?.focus(),100);
+}
+function fwPinNext(i){
+  const inp=document.getElementById('fwp-'+i);
+  if(inp&&inp.value.length===1&&i<3){document.getElementById('fwp-'+(i+1))?.focus();}
+  if(i===3&&inp.value.length===1)checkFwPin();
+}
+function fwPinKey(e,i){if(e.key==='Backspace'&&!document.getElementById('fwp-'+i).value&&i>0)document.getElementById('fwp-'+(i-1))?.focus()}
+function checkFwPin(){
+  const entered=[0,1,2,3].map(i=>document.getElementById('fwp-'+i)?.value||'').join('');
+  const fw=GFwSettings();
+  if(entered===(fw.pin||FW_DEFAULT_PIN)){
+    _fwUnlocked=true;
+    closeFwGate();
+    adminTabFirewall();
+  } else {
+    const err=document.getElementById('fw-pin-err');if(err)err.textContent='❌ رمز PIN خاطئ';
+    [0,1,2,3].forEach(i=>{const el=document.getElementById('fwp-'+i);if(el)el.value='';});
+    document.getElementById('fwp-0')?.focus();
+    // log failed attempt
+    const fws=GFwSettings();if(!fws.log)fws.log=[];
+    fws.log.unshift({type:'pin_fail',time:now(),msg:'محاولة دخول فاشلة لجدار الحماية'});
+    if(fws.log.length>50)fws.log.length=50;
+    SFwSettings(fws);
+  }
+}
+function closeFwGate(){document.getElementById('fw-gate-overlay')?.remove()}
+
+function adminTabFirewall(){
+  // Switch to firewall tab
+  document.querySelectorAll('.admin-tab').forEach(t=>t.classList.remove('on'));
+  const tabs=['users','students-reg','devices','projects','messages','activity','support','broadcast','admins','maintenance','firewall'];
+  tabs.forEach(t=>{const el=$('admin-tab-'+t);if(el)el.style.display='none'});
+  const fw=$('admin-tab-firewall');if(fw)fw.style.display='block';
+  // Mark the firewall tab button as active
+  document.querySelectorAll('.admin-tab').forEach(t=>{if(t.textContent.includes('جدار الحماية'))t.classList.add('on')});
+  loadFwSettings();
+}
+
+function loadFwSettings(){
+  const fw=GFwSettings();
+  const keys=['fw-rate-limit','fw-syn-flood','fw-http-flood','fw-captcha','fw-brute-lock','fw-backoff','fw-auto-ip-ban','fw-sql-inject','fw-xss','fw-csrf','fw-file-scan','fw-file-types','fw-https','fw-sec-log','fw-alert','fw-emergency'];
+  keys.forEach(k=>{const el=$(k);if(el)el.checked=!!fw[k]});
+  updateFwStatusBadge();
+  renderFwLog();
+}
+function saveFwSettings(){
+  const fw=GFwSettings();
+  const keys=['fw-rate-limit','fw-syn-flood','fw-http-flood','fw-captcha','fw-brute-lock','fw-backoff','fw-auto-ip-ban','fw-sql-inject','fw-xss','fw-csrf','fw-file-scan','fw-file-types','fw-https','fw-sec-log','fw-alert','fw-emergency'];
+  keys.forEach(k=>{const el=$(k);if(el)fw[k]=el.checked});
+  SFwSettings(fw);
+  updateFwStatusBadge();
+  toast('تم حفظ إعدادات جدار الحماية 🔥');
+}
+function updateFwStatusBadge(){
+  const fw=GFwSettings();
+  const keys=['fw-rate-limit','fw-syn-flood','fw-http-flood','fw-brute-lock','fw-sql-inject','fw-xss'];
+  const activeCount=keys.filter(k=>fw[k]).length;
+  const badge=$('fw-status-badge');if(!badge)return;
+  if(activeCount===keys.length){badge.className='badge badge-green';badge.textContent='🔒 محمية بالكامل'}
+  else if(activeCount>2){badge.className='badge badge-yellow';badge.textContent='⚠️ حماية جزئية'}
+  else{badge.className='badge badge-red';badge.textContent='🔓 حماية ضعيفة'}
+}
+function fwEnableAll(){
+  const keys=['fw-rate-limit','fw-syn-flood','fw-http-flood','fw-captcha','fw-brute-lock','fw-backoff','fw-auto-ip-ban','fw-sql-inject','fw-xss','fw-csrf','fw-file-scan','fw-file-types','fw-https','fw-sec-log','fw-alert'];
+  keys.forEach(k=>{const el=$(k);if(el)el.checked=true});
+  saveFwSettings();
+}
+function fwDisableAll(){
+  showConfirm('إيقاف جميع قواعد الحماية؟','⚠️ هذا يجعل المنصة عرضة للهجمات!',()=>{
+    const keys=['fw-rate-limit','fw-syn-flood','fw-http-flood','fw-captcha','fw-brute-lock','fw-backoff','fw-auto-ip-ban','fw-sql-inject','fw-xss','fw-csrf','fw-file-scan','fw-file-types','fw-https','fw-sec-log','fw-alert','fw-emergency'];
+    keys.forEach(k=>{const el=$(k);if(el)el.checked=false});
+    saveFwSettings();
+  },'⚠️');
+}
+function lockFirewall(){_fwUnlocked=false;nav('v-admin');toast('تم قفل جدار الحماية 🔒')}
+function renderFwLog(){
+  const el=$('fw-attack-log');if(!el)return;
+  const fw=GFwSettings();const log=fw.log||[];
+  el.innerHTML=log.length?log.slice(0,20).map(e=>`<div class="set-action-btn"><div><div class="sai">🔴 ${escHtml(e.msg||e.type)}</div><div class="sad">${e.time||''}</div></div></div>`).join('')
+  :'<div class="empty-state" style="padding:16px"><p>لم يتم تسجيل أي هجوم حتى الآن ✅</p></div>';
+}
+function clearFwLog(){
+  const fw=GFwSettings();fw.log=[];SFwSettings(fw);
+  renderFwLog();toast('تم مسح سجل الهجمات');
+}
+
+// Change firewall PIN
+function changeFwPin(){
+  const newPin=prompt('أدخل رمز PIN الجديد (4 أرقام):');
+  if(!newPin||!/^\d{4}$/.test(newPin)){toast('الرمز يجب أن يكون 4 أرقام','e');return}
+  const fw=GFwSettings();fw.pin=newPin;SFwSettings(fw);
+  toast('تم تغيير رمز PIN لجدار الحماية 🔑');
+}
+
+// adminTab already handles firewall directly
+
+// ============================================================
+// TEACHER BROADCAST (replaces teacher private chat)
+// ============================================================
+function teacherBroadcast(){
+  const msg=$('t-bc-msg')?.value.trim();
+  const fileInput=$('t-bc-file');
+  const files=fileInput?.files||[];
+  if(!msg&&!files.length){toast('اكتب رسالة أو أرفق ملفاً','e');return}
+  
+  const students=GU().filter(u=>u.role==='student');
+  if(!students.length){toast('لا يوجد تلاميذ مسجلون','e');return}
+  
+  const doSend=(attachment)=>{
+    const bc=GBC();
+    const item={
+      from:CU.username,fromName:CU.name,fromRole:'teacher',
+      msg,file:attachment||null,time:now(),to:'students',
+      count:students.length
+    };
+    bc.unshift(item);if(bc.length>100)bc.pop();SBC(bc);
+    // Notify all students
+    students.forEach(s=>{
+      pushNotif({to:s.username,text:`📢 رسالة من ${CU.name}: ${(msg||'📎 مرفق').slice(0,60)}`,sender:CU.username});
+    });
+    if($('t-bc-msg'))$('t-bc-msg').value='';
+    if(fileInput)fileInput.value='';
+    toast(`تم الإرسال لـ ${students.length} تلميذ ✅`);
+    renderTeacherBroadcastHistory();
+    pushActivity({user:CU.username,name:CU.name,role:CU.role,action:`إرسال جماعي للتلاميذ: ${(msg||'ملف مرفق').slice(0,50)}`});
+  };
+  
+  if(files.length){
+    const f=files[0];
+    const reader=new FileReader();
+    reader.onload=e=>doSend({name:f.name,size:f.size,type:f.type,data:e.target.result});
+    reader.readAsDataURL(f);
+  } else doSend(null);
+}
+
+function renderTeacherBroadcastHistory(){
+  const el=$('teacher-broadcast-history');if(!el)return;
+  const history=GBC().filter(b=>b.fromRole==='teacher');
+  const el2=$('t-student-count-bc');
+  if(el2)el2.textContent=GU().filter(u=>u.role==='student').length+' تلميذ';
+  
+  el.innerHTML=history.length?history.map(b=>`<div class="t-bc-item">
+    <div class="bc-meta">
+      <span>📤 ${b.fromName||b.from}</span>
+      <span>•</span>
+      <span>${b.time}</span>
+      <span>•</span>
+      <span class="badge badge-blue">${b.count||0} تلميذ</span>
+    </div>
+    ${b.msg?`<div class="bc-msg">${escHtml(b.msg)}</div>`:''}
+    ${b.file&&b.file.type?.startsWith('image/')?`<img class="t-bc-img" src="${b.file.data}" onclick="window.open(this.src)" alt="صورة مرفقة">`:''}
+    ${b.file&&!b.file.type?.startsWith('image/')?`<a class="bubble-doc" href="${b.file.data}" download="${b.file.name}" target="_blank"><span class="doc-icon">${docIcon(b.file.name)}</span><span class="doc-info"><div class="doc-name">${escHtml(b.file.name)}</div><div class="doc-size">${fmtSize(b.file.size)}</div></span></a>`:''}
+  </div>`).join(''):'<div class="empty-state" style="padding:16px"><p>لم يتم إرسال أي رسالة جماعية بعد</p></div>';
+}
+
+// ============================================================
+// SUB-ADMIN — improved version
+// ============================================================
+function selectAllSubPerms(val){
+  ['perm-users','perm-view-proj','perm-grade','perm-broadcast','perm-support','perm-maintenance','perm-activity','perm-settings-sub','perm-chat-admin','perm-sid'].forEach(id=>{
+    const el=$(id);if(el)el.checked=val;
+  });
+}
+
+// Override addSubAdmin with new version
+window.addSubAdmin=function(){
+  const username=$('new-admin-user')?.value;
+  if(!username){toast('اختر مستخدماً','e');return}
+  const displayName=$('sub-admin-display-name')?.value.trim()||'';
+  const perms=[];
+  ['perm-users','perm-view-proj','perm-grade','perm-broadcast','perm-support','perm-maintenance','perm-activity','perm-settings-sub','perm-chat-admin','perm-sid'].forEach(id=>{
+    const el=$(id);if(el&&el.checked)perms.push(el.value);
+  });
+  const users=GU();const i=users.findIndex(u=>u.username===username);
+  if(i<0){toast('المستخدم غير موجود','e');return}
+  users[i].role='admin';
+  users[i].perms='limited';
+  users[i].permList=perms;
+  if(displayName)users[i].displayName=displayName;
+  SU(users);
+  toast(`تم تعيين ${users[i].name} كمشرف مساعد ✅`);
+  renderAdminsList();populateNewAdminSelect();
+  pushActivity({user:CU.username,name:CU.name,role:CU.role,action:`تعيين مشرف مساعد: ${users[i].name}`});
+};
+
+// Override renderAdminsList to show detailed perms and display name
+window.renderAdminsList=function(){
+  const el=$('admins-list');if(!el)return;
+  const admins=GU().filter(u=>u.role==='admin');
+  el.innerHTML=admins.length?admins.map(a=>{
+    const displayN=a.displayName?`${a.displayName} <span style="font-size:.68rem;color:var(--muted)">(${a.name})</span>`:a.name;
+    const permLabels={'users':'👥 إدارة المستخدمين','view-proj':'📁 عرض المشاريع','grade':'⭐ تقييم','broadcast':'📢 إرسال','support':'🆘 دعم','maintenance':'🔧 صيانة','activity':'📣 نشاط','settings':'⚙️ إعدادات','chat':'💬 دردشة','sid':'🆔 سجل'};
+    const permsHtml=a.permList?.length?a.permList.map(p=>`<span class="badge badge-gray" style="margin:1px">${permLabels[p]||p}</span>`).join(''):'';
+    return `<div class="code-card" style="flex-direction:column;align-items:flex-start;gap:6px">
+      <div style="display:flex;align-items:center;gap:8px;width:100%">
+        <div class="conv-av" style="background:linear-gradient(135deg,var(--danger),#c2410c)">${a.name[0]}</div>
+        <div class="code-info" style="flex:1">
+          <div class="code-label">${displayN}</div>
+          <div class="code-meta">${a.perms==='superadmin'?'مدير رئيسي ⭐':a.perms==='limited'?'مشرف مساعد':'مشرف'}</div>
+        </div>
+        ${a.username!==CU.username&&a.perms!=='superadmin'?`<button class="btn btn-sm btn-danger" onclick="removeAdmin('${a.username}')">إزالة</button>`:''}
+      </div>
+      ${permsHtml?`<div style="margin-top:2px">${permsHtml}</div>`:''}
+    </div>`;
+  }).join(''):'<div class="empty-state" style="padding:16px"><p>لا يوجد مشرفون مساعدون</p></div>';
+};
+
+// ============================================================
+// HIDE ONLINE STATUS FROM STUDENTS & TEACHERS
+// ============================================================
+// Override isOnline so students and teachers can't see real status
+const _origIsOnline=window.isOnline;
+window.isOnline=function(username){
+  // Students and teachers cannot see online status of anyone (not even admin)
+  if(CU&&(CU.role==='student'||CU.role==='teacher'))return false;
+  return _origIsOnline?_origIsOnline(username):false;
+};
+// Also override lastSeenLabel
+const _origLastSeenLabel=window.lastSeenLabel;
+window.lastSeenLabel=function(username){
+  if(CU&&(CU.role==='student'||CU.role==='teacher'))return '';
+  return _origLastSeenLabel?_origLastSeenLabel(username):'';
+};
+
+// role class added directly in afterLogin
+
+// ============================================================
+// TEACHER BROADCAST NAV HOOK
+// ============================================================
+const _origBuildTeacherChatList=window.buildTeacherChatList;
+window.buildTeacherChatList=function(){
+  // Don't call old function - show broadcast UI instead
+  renderTeacherBroadcastHistory();
+};
+
+// Populate sub-admin user dropdown properly
+function populateNewAdminSelect(){
+  const sel=$('new-admin-user');if(!sel)return; const sel2=$('new-admin-select');if(sel2){sel2.innerHTML=sel.innerHTML}
+  const nonAdmins=GU().filter(u=>u.role!=='admin');
+  sel.innerHTML='<option value="">اختر مستخدماً</option>'+
+    nonAdmins.map(u=>`<option value="${u.username}">${u.name} (${u.role==='teacher'?'أستاذ':'تلميذ'})</option>`).join('');
+}
+
+
+// ============================================================
+// STUDENT BROADCAST FEED (replaces student private chat)
+// ============================================================
+function renderStudentBroadcastFeed(){
+  const el=$('student-broadcast-feed');if(!el)return;
+  // Show broadcasts from teachers and admin
+  const bcs=GBC().filter(b=>b.target==='all'||b.target==='student');
+  if(!bcs.length){
+    el.innerHTML='<div class="empty-state" style="padding:20px"><span class="empty-icon">📢</span><p>لا توجد رسائل من الأستاذ أو الإدارة بعد</p></div>';
+    return;
+  }
+  el.innerHTML=bcs.map(b=>{
+    const isTeacher=b.fromRole==='teacher';
+    return `<div class="t-bc-item" style="border-right:3px solid ${isTeacher?'var(--accent2)':'var(--danger)'}">
+      <div class="bc-meta">
+        <span style="color:${isTeacher?'var(--accent2)':'var(--danger)'};font-weight:800">${isTeacher?'👨‍🏫':'🛡️'} ${b.byName||b.fromName||'الإدارة'}</span>
+        <span style="color:var(--muted)">•</span>
+        <span style="color:var(--muted)">${b.time}</span>
+      </div>
+      ${b.title&&b.title!=='رسالة جماعية'?`<div style="font-weight:800;font-size:.9rem;margin:6px 0">${escHtml(b.title)}</div>`:''}
+      ${b.msg?`<div class="bc-msg">${escHtml(b.msg)}</div>`:''}
+      ${b.file&&b.file.type&&b.file.type.startsWith('image/')?`<img src="${b.file.data}" style="max-width:100%;border-radius:10px;margin-top:8px;cursor:pointer" onclick="window.open(this.src)" alt="صورة مرفقة">`:''}
+      ${b.file&&b.file.type&&!b.file.type.startsWith('image/')?`<a href="${b.file.data}" download="${b.file.name}" style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.06);border-radius:8px;padding:6px 10px;margin-top:8px;font-size:.8rem;color:var(--text);text-decoration:none">📎 ${escHtml(b.file.name)} <span style="color:var(--muted)">${fmtSize(b.file.size)}</span></a>`:''}
+    </div>`;
+  }).join('');
+}
+
 </script>
 </body>
 </html>
